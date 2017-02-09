@@ -37,7 +37,7 @@
             this.ClientSize = new System.Drawing.Size(502, 373);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Projet en laboratoire de programmation";
             this.ResumeLayout(false);
 
         }
