@@ -1,0 +1,64 @@
+https://www.prestaopen.com/microsoft-serveurs/43-installation-active-directory.html
+
+=> Tuto sur l'installation d'un active directory
+--------------------------------------------------------------------------------------
+Page d'acceuil:
+
+	Fonctionnalités:
+		- Un tuto pour savoir comment utliser l'app
+		
+	Modélisations:
+		- Description textuelles (entité, association, ...)
+		- Diagramme de cas d'utilisation
+		- Diagramme de classe
+		- Organigramme (Fonctionnement, structure)
+
+	Pouvoir créer un tournoi 
+		- Choix du type
+		- Gestion de calendar
+		- Ajouter des participants, résultats classements
+		- Envoyer les classements par mail au responsable
+
+
+Chercher un tournoi par type nom et companie
+
+
+Créer une organisation; authentification recquise.
+	- Authentification par active directory
+	- Utilisateur peuvent être organisés par groupe
+	- Fenêtre supplémentaire pour l'authentification
+	- Cryptage mot de passe
+	- Service web pour faire la vérification login
+	- Trois echecs login = nouvelle page co imppo, plus quitter l'app
+
+Français Anglais Allemand Arabe Russe
+
+Pouvoir switch rapidement entre chaque langue
+
+Stockage, BDD complète avec toutes les infos des résultats etc.
+
+Une option top 10 des jeux
+	- Petite démo de chaque jeu
+
+Côté administration
+	- Authentification admin et on obtient une nouvelle fenêtreuh.
+	- Gestion application
+				- Importation utilisateur active directory dans la BDD
+				- Mise à jour de la BDD
+				- Statistiques
+
+Déploiement service WEB sur un serveur WEB IIS
+	- Active Directory
+	- Différents utilisateurs
+	- Publication à partir d'une page web
+	- Testage sur différentes machines
+	- Installation sur cd
+
+Contraintes:
+	- Classe pour chaque objets 	TOUT EST OBJET  =====> Femmes
+	- Services Web
+	- Cryptage
+	- IIS
+	- AD
+	- WAAAAAH HUUUUUUUUM QUOOOOOOOOOOOOOI
+	- Il faut faire en sorte que l'app puisse s'appliquer à n'importe quelle ville à venir et même entre les villes de l'année en cours, elle doit être portable.
