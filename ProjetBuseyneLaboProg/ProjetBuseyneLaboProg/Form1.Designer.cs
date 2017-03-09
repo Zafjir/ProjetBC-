@@ -38,7 +38,6 @@
             this.bt_login = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.bt_createAccount = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button_ok = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -113,6 +112,7 @@
             this.bt_login.TabIndex = 3;
             this.bt_login.Text = "Login";
             this.bt_login.UseVisualStyleBackColor = true;
+            this.bt_login.Click += new System.EventHandler(this.bt_login_Click);
             // 
             // button1
             // 
@@ -134,16 +134,6 @@
             this.bt_createAccount.UseVisualStyleBackColor = true;
             this.bt_createAccount.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(335, 31);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Admin";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // button_ok
             // 
             this.button_ok.Location = new System.Drawing.Point(274, 114);
@@ -160,7 +150,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(423, 190);
             this.Controls.Add(this.button_ok);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.bt_createAccount);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
@@ -193,7 +182,6 @@
         private System.Windows.Forms.Button bt_login;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button bt_createAccount;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button_ok;
     }
 }

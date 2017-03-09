@@ -115,6 +115,7 @@
             this.bt_logConfirm.TabIndex = 9;
             this.bt_logConfirm.Text = "Confirm";
             this.bt_logConfirm.UseVisualStyleBackColor = true;
+            this.bt_logConfirm.Click += new System.EventHandler(this.bt_logConfirm_Click);
             // 
             // bt_back
             // 
