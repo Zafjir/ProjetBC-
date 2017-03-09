@@ -61,21 +61,21 @@
             // 
             // tb_UsernameNewAccount
             // 
-            this.tb_UsernameNewAccount.Location = new System.Drawing.Point(114, 82);
+            this.tb_UsernameNewAccount.Location = new System.Drawing.Point(114, 64);
             this.tb_UsernameNewAccount.Name = "tb_UsernameNewAccount";
             this.tb_UsernameNewAccount.Size = new System.Drawing.Size(143, 20);
             this.tb_UsernameNewAccount.TabIndex = 3;
             // 
             // tb_passwordNewAccountAgain
             // 
-            this.tb_passwordNewAccountAgain.Location = new System.Drawing.Point(114, 134);
+            this.tb_passwordNewAccountAgain.Location = new System.Drawing.Point(114, 116);
             this.tb_passwordNewAccountAgain.Name = "tb_passwordNewAccountAgain";
             this.tb_passwordNewAccountAgain.Size = new System.Drawing.Size(143, 20);
             this.tb_passwordNewAccountAgain.TabIndex = 4;
             // 
             // tb_passwordNewAccount
             // 
-            this.tb_passwordNewAccount.Location = new System.Drawing.Point(114, 108);
+            this.tb_passwordNewAccount.Location = new System.Drawing.Point(114, 90);
             this.tb_passwordNewAccount.Name = "tb_passwordNewAccount";
             this.tb_passwordNewAccount.Size = new System.Drawing.Size(143, 20);
             this.tb_passwordNewAccount.TabIndex = 5;
@@ -83,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 85);
+            this.label3.Location = new System.Drawing.Point(12, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 6;
@@ -92,7 +92,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 111);
+            this.label4.Location = new System.Drawing.Point(12, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 7;
@@ -101,7 +101,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 137);
+            this.label5.Location = new System.Drawing.Point(12, 119);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 8;
@@ -109,7 +109,7 @@
             // 
             // bt_logConfirm
             // 
-            this.bt_logConfirm.Location = new System.Drawing.Point(197, 230);
+            this.bt_logConfirm.Location = new System.Drawing.Point(197, 146);
             this.bt_logConfirm.Name = "bt_logConfirm";
             this.bt_logConfirm.Size = new System.Drawing.Size(75, 23);
             this.bt_logConfirm.TabIndex = 9;
@@ -119,18 +119,19 @@
             // 
             // bt_back
             // 
-            this.bt_back.Location = new System.Drawing.Point(13, 230);
+            this.bt_back.Location = new System.Drawing.Point(12, 146);
             this.bt_back.Name = "bt_back";
             this.bt_back.Size = new System.Drawing.Size(75, 23);
             this.bt_back.TabIndex = 10;
             this.bt_back.Text = "Back";
             this.bt_back.UseVisualStyleBackColor = true;
+            this.bt_back.Click += new System.EventHandler(this.bt_back_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 265);
+            this.ClientSize = new System.Drawing.Size(284, 179);
             this.Controls.Add(this.bt_back);
             this.Controls.Add(this.bt_logConfirm);
             this.Controls.Add(this.label5);

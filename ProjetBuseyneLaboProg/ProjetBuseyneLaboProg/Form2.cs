@@ -20,7 +20,10 @@ namespace ProjetBuseyneLaboProg
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            Console.Write("\nOuverture : " + Variable.conn.ConnectionString.ToString());
+            tb_passwordNewAccount.PasswordChar = '*';
+            tb_passwordNewAccount.MaxLength = 14;
+            tb_passwordNewAccountAgain.PasswordChar = '*';
+            tb_passwordNewAccountAgain.MaxLength = 14;
         }
 
         private void bt_logConfirm_Click(object sender, EventArgs e)
@@ -30,24 +33,21 @@ namespace ProjetBuseyneLaboProg
 
             if (tb_passwordNewAccount.Text == tb_passwordNewAccountAgain.Text)
             {
-                /*Variable.cmd.CommandText = "insert into LogUtilisateur(Username,Password) values('" + tb_UsernameNewAccount.Text + "','" + tb_passwordNewAccount.Text + "')";
-                Variable.cmd.Connection = Variable.conn;
-                nbm = Variable.cmd.ExecuteNonQuery();
-                Variable.conn.Close();*/
-
                 if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }                }
                 Variable.cmd.CommandText = "insert into LogUtilisateur(UsName,Pwd) values('" + tb_UsernameNewAccount.Text + "','" + tb_passwordNewAccount.Text + "')";
                 Variable.cmd.Connection = Variable.conn;
             try
             { 
-                    nbm = Variable.cmd.ExecuteNonQuery();
-                    MessageBox.Show(nbm.ToString());
+                nbm = Variable.cmd.ExecuteNonQuery();
             }catch (Exception ex)
-                {
-                    MessageBox.Show("Compte créé avec succès");
-                }
+                {}
                
-                Variable.conn.Close();
+            Variable.conn.Close();
+            this.Close();
+        }
+
+        private void bt_back_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
