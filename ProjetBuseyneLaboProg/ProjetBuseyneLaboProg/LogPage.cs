@@ -11,10 +11,10 @@ using System.Data.OleDb;
 
 namespace ProjetBuseyneLaboProg
 {
-    public partial class Form1 : Form
+    public partial class LogPage : Form
     {
         
-        public Form1()
+        public LogPage()
         {
             InitializeComponent();
             Variable.conn = new OleDbConnection();
@@ -26,6 +26,8 @@ namespace ProjetBuseyneLaboProg
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            textBox1.Clear();
+            tb_password.Clear();
             tb_password.PasswordChar = '*';
             tb_password.MaxLength = 14;
             Variable.conn.ConnectionString = Properties.Settings.Default.OledbConnectionString2010;
@@ -38,9 +40,6 @@ namespace ProjetBuseyneLaboProg
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Console.Write("Form1 : " + Variable.conn.ConnectionString.ToString());
-            Variable.conn.Close();
-
             Form2 form2 = new Form2();
             form2.ShowDialog();
         }
@@ -104,22 +103,46 @@ namespace ProjetBuseyneLaboProg
                             Form3 form3 = new Form3();
                             form3.ShowDialog();
                         }
-                    }
-                    if (Variable.dtrd != null)
-                    {
-                        Variable.dtrd.Close();
-                    }
+                        if (Variable.dtrd != null)
+                        {
+                            Variable.dtrd.Close();
+                        }
 
-                    if (Variable.conn.State == ConnectionState.Open)
-                    {
-                        Variable.conn.Close();
+                        if (log != enr)
+                        {
+                            if (Variable.conn.State == ConnectionState.Open)
+                            {
+                                Variable.username = textBox1.Text;
+                                Variable.password = tb_password.Text;
+                                sqlstr = "select * from LogUtilisateur";
+                                Variable.cmd.CommandType = CommandType.Text;
+                                Variable.cmd.CommandText = sqlstr;
+                                Variable.cmd.Connection = Variable.conn;
+                                Variable.dtrd = Variable.cmd.ExecuteReader();
+                                while (Variable.dtrd.Read())
+                                {
+                                    enr = Variable.dtrd["UsName"].ToString() + "" + Variable.dtrd["Pwd"].ToString();
+                                    log = Variable.username + Variable.password;
+                                    if (log == enr)
+                                    {
+                                        PageAccueil pageAccueil = new PageAccueil();
+                                        pageAccueil.ShowDialog();
+                                    }
+                                }
+                            }
+                        }
+                        if (Variable.dtrd != null)
+                        {
+                            Variable.dtrd.Close();
+                        }
 
+                        if (Variable.conn.State == ConnectionState.Open)
+                        {
+                            Variable.conn.Close();
+                        }
                     }
                 }
-                }catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                }catch (Exception ex){}
         }
     }
 }

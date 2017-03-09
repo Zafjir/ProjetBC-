@@ -35,28 +35,19 @@ namespace ProjetBuseyneLaboProg
                 nbm = Variable.cmd.ExecuteNonQuery();
                 Variable.conn.Close();*/
 
-                if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open();
-                    MessageBox.Show("connexion open");
-                }
-                Console.Write("\nValeur de VALUES'" + tb_UsernameNewAccount.Text + "', '" + tb_passwordNewAccount.Text + "'\n");
-                Console.Write("insert into LogUtilisateur(ndc,pwduser) values('" + tb_UsernameNewAccount.Text + "','" + tb_passwordNewAccount.Text + "')");
-                MessageBox.Show("insert into LogUtilisateur(ndc,pwduser) values('" + tb_UsernameNewAccount.Text + "','" + tb_passwordNewAccount.Text + "')");
-                Variable.cmd.CommandText = "insert into LogUtilisateur(ndc,pwduser) values('" + tb_UsernameNewAccount.Text + "','" + tb_passwordNewAccount.Text + "')";
+                if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }                }
+                Variable.cmd.CommandText = "insert into LogUtilisateur(UsName,Pwd) values('" + tb_UsernameNewAccount.Text + "','" + tb_passwordNewAccount.Text + "')";
                 Variable.cmd.Connection = Variable.conn;
-                try { 
-                       nbm = Variable.cmd.ExecuteNonQuery();
+            try
+            { 
+                    nbm = Variable.cmd.ExecuteNonQuery();
                     MessageBox.Show(nbm.ToString());
-                 }catch (Exception ex) {
-                    MessageBox.Show(ex.Message);
+            }catch (Exception ex)
+                {
+                    MessageBox.Show("Compte créé avec succès");
                 }
                
                 Variable.conn.Close();
-            }
-            else
-            {
-                MessageBox.Show("Error password");
-            }
-
             this.Close();
         }
     }

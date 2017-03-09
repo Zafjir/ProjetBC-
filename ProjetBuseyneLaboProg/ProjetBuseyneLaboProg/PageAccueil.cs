@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace ProjetBuseyneLaboProg
 {
-    public partial class Form3 : Form
+    public partial class PageAccueil : Form
     {
-        public Form3()
+        public PageAccueil()
         {
             InitializeComponent();
         }
 
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -1,6 +1,6 @@
 ﻿namespace ProjetBuseyneLaboProg
 {
-    partial class Form1
+    partial class LogPage
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
