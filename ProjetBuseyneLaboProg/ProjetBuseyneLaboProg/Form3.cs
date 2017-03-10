@@ -26,5 +26,42 @@ namespace ProjetBuseyneLaboProg
         {
             this.Close();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string log;
+            string sqlstr;
+            string enr1, enr2;
+
+            try
+            {
+                Variable.conn.Open();
+                if (Variable.conn.State == ConnectionState.Open)
+                {
+
+                    sqlstr = "select * from LogUtilisateur";
+                    Variable.cmd.CommandType = CommandType.Text;
+                    Variable.cmd.CommandText = sqlstr;
+                    Variable.cmd.Connection = Variable.conn;
+                    Variable.dtrd = Variable.cmd.ExecuteReader();
+                    while (Variable.dtrd.Read())
+                    {
+                        enr1 = Variable.dtrd["UsName"].ToString();
+                        enr2 = Variable.dtrd["Pwd"].ToString();
+                        listBox1.Items.Add(enr1);
+                        listBox2.Items.Add(enr2);
+                    }
+                    if (Variable.dtrd != null)
+                    {
+                        Variable.dtrd.Close();
+                    }
+                    if (Variable.conn.State == ConnectionState.Open)
+                    {
+                        Variable.conn.Close();
+                    }
+                }
+            }
+            catch { }
+            }
     }
 }

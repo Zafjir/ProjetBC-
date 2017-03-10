@@ -21,5 +21,13 @@ namespace ProjetBuseyneLaboProg
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PageAccueil pageAccueil = new PageAccueil();
+            pageAccueil.Width=709;
+            pageAccueil.Size = new Size(709, 500);
+            
+        }
     }
 }
