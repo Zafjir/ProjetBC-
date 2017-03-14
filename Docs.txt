@@ -8,7 +8,7 @@ Page d'acceuil:
 		- Un tuto pour savoir comment utliser l'app
 		
 	Modélisations:
-		- Description textuelles (entité, association, ...)
+		- Description textuelles (entité, association, ...) 
 		- Diagramme de cas d'utilisation
 		- Diagramme de classe
 		- Organigramme (Fonctionnement, structure)
