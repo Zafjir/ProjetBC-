@@ -100,6 +100,7 @@ namespace ProjetBuseyneLaboProg
                         log = Variable.username + Variable.password;
                         if (log == enr)
                         {
+                            Variable.conn.Close();
                             Form3 form3 = new Form3();
                             form3.ShowDialog();
                         }
@@ -125,6 +126,7 @@ namespace ProjetBuseyneLaboProg
                                     log = Variable.username + Variable.password;
                                     if (log == enr)
                                     {
+                                        Variable.conn.Close();
                                         PageAccueil pageAccueil = new PageAccueil();
                                         pageAccueil.ShowDialog();
                                     }

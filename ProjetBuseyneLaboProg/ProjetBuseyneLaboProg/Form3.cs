@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace ProjetBuseyneLaboProg
 {
@@ -60,8 +61,10 @@ namespace ProjetBuseyneLaboProg
                         Variable.conn.Close();
                     }
                 }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
-            catch { }
             }
     }
 }

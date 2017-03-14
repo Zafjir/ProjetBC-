@@ -12,6 +12,7 @@ namespace ProjetBuseyneLaboProg
 {
     public partial class PageAccueil : Form
     {
+        bool agrandirPage = false;
         public PageAccueil()
         {
             InitializeComponent();
@@ -24,10 +25,34 @@ namespace ProjetBuseyneLaboProg
 
         private void button2_Click(object sender, EventArgs e)
         {
-            PageAccueil pageAccueil = new PageAccueil();
-            pageAccueil.Width=709;
-            pageAccueil.Size = new Size(709, 500);
-            
+            agrandirPage = true;
+        }
+
+        private void PageAccueil_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (agrandirPage==true)
+            {
+                int h = 254;
+                int x = 3;
+                while (h < 710)
+                {
+                    h++;
+                    this.Width = h;
+                }
+                agrandirPage = false;
+
+                
+                ListBox list = new ListBox();
+                list.Size = new Size(300, 300);
+                list.Location = new Point(250, 50);
+
+                this.Controls.Add(list);
+            }
         }
     }
 }
