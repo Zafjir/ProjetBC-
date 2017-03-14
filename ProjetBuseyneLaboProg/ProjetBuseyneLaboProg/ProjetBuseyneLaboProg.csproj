@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="accesDonnées.cs" />
+    <Compile Include="DataBaseConnections.cs" />
     <Compile Include="LogPage.cs">
       <SubType>Form</SubType>
     </Compile>
