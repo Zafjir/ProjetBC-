@@ -12,7 +12,10 @@ namespace ProjetBuseyneLaboProg
 {
     public partial class PageAccueil : Form
     {
-        bool agrandirPage = false;
+        int agrandirPage = 0;
+        bool itemCree = false;
+        Button retourBt = new Button();
+        ListBox list = new ListBox();
         public PageAccueil()
         {
             InitializeComponent();
@@ -25,7 +28,12 @@ namespace ProjetBuseyneLaboProg
 
         private void button2_Click(object sender, EventArgs e)
         {
-            agrandirPage = true;
+            agrandirPage = 1;
+        }
+
+        private void retourBt_Click(object sender, EventArgs e)
+        {
+            agrandirPage = 2;
         }
 
         private void PageAccueil_Load(object sender, EventArgs e)
@@ -35,24 +43,58 @@ namespace ProjetBuseyneLaboProg
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (agrandirPage==true)
+            if (agrandirPage == 1)
             {
-                int h = 254;
-                int x = 3;
-                while (h < 710)
+                if (itemCree==false)
                 {
-                    h++;
-                    this.Width = h;
+                    list.Size = new Size(420, 300);
+                    list.Location = new Point(250, 50);
+                    retourBt.Size = new Size(23, 23);
+                    retourBt.Location = new Point(157, 337);
+                    retourBt.Text = "<";
+                    retourBt.Name = "retourBt";
+                    retourBt.Click += new EventHandler(retourBt_Click);
+                    this.Controls.Add(retourBt);
+                    this.Controls.Add(list);
+                    itemCree = true;
                 }
-                agrandirPage = false;
-
-                
-                ListBox list = new ListBox();
-                list.Size = new Size(300, 300);
-                list.Location = new Point(250, 50);
-
-                this.Controls.Add(list);
+                if (this.Size.Width < 710&&itemCree==true)
+                {
+                    retourBt.Visible = true;
+                    list.Visible = true;
+                    int newWidth = this.Size.Width + 3;
+                    this.Size = new Size(newWidth, this.Size.Height);
+                    label1.Width = newWidth;
+                    label1.Location = new Point(3, 9);
+                }
+                if (this.Size.Width==709)
+                {
+                    agrandirPage = 0;
+                }
             }
+
+            if (agrandirPage == 2)
+            {
+                if (this.Size.Width > 253)
+                {
+                    int newWidth = this.Size.Width - 3;
+                    this.Size = new Size(newWidth, this.Size.Height);
+                    label1.Width = newWidth;
+                    label1.Location = new Point(3, 9);
+                    if (this.Size.Width==254)
+                    {
+                        list.Visible = false;
+                        retourBt.Visible = false;
+                        label1.Width = 229;
+                        agrandirPage = 0;
+                    }
+                }
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

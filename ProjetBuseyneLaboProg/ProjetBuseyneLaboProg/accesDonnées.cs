@@ -11,24 +11,9 @@ using System.Data.OleDb;
 
 namespace ProjetBuseyneLaboProg
 {
-    public partial class Form3 : Form
+    class accesDonnées
     {
-        public Form3()
-        {
-            InitializeComponent();
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        /*public static string accèsTableUtilisateurUsName()
         {
             string log;
             string sqlstr;
@@ -40,7 +25,7 @@ namespace ProjetBuseyneLaboProg
                 if (Variable.conn.State == ConnectionState.Open)
                 {
 
-                    sqlstr = "select * from LogUtilisateur";
+                    sqlstr = "select UsName from LogUtilisateur";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;
@@ -48,50 +33,9 @@ namespace ProjetBuseyneLaboProg
                     while (Variable.dtrd.Read())
                     {
                         enr1 = Variable.dtrd["UsName"].ToString();
-                        enr2 = Variable.dtrd["Pwd"].ToString();
-                        listBox1.Items.Add(enr1);
-                        listBox2.Items.Add(enr2);
+                        return enr1;
                     }
                     if (Variable.dtrd != null)
-                    {
-                        Variable.dtrd.Close();
-                    }
-                    if (Variable.conn.State == ConnectionState.Open)
-                    {
-                        Variable.conn.Close();
-                    }
-                }
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            string log;
-            string sqlstr;
-            string enr1, enr2;
-
-            try
-            {
-                Variable.conn.Open();
-                if (Variable.conn.State == ConnectionState.Open)
-                {
-
-                    sqlstr = "select * from LogAdmin";
-                    Variable.cmd.CommandType = CommandType.Text;
-                    Variable.cmd.CommandText = sqlstr;
-                    Variable.cmd.Connection = Variable.conn;
-                    Variable.dtrd = Variable.cmd.ExecuteReader();
-                    while (Variable.dtrd.Read())
-                    {
-                        enr1 = Variable.dtrd["UsName"].ToString();
-                        enr2 = Variable.dtrd["Pwd"].ToString();
-                        listBox1.Items.Add(enr1);
-                        listBox2.Items.Add(enr2);
-                    }
-                    if (Variable.dtrd == null)
                     {
                         Variable.dtrd.Close();
                     }
@@ -106,5 +50,43 @@ namespace ProjetBuseyneLaboProg
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        public static string accèsTableUtilisateurPwd()
+        {
+            string log;
+            string sqlstr;
+            string enr1, enr2;
+
+            try
+            {
+                Variable.conn.Open();
+                if (Variable.conn.State == ConnectionState.Open)
+                {
+
+                    sqlstr = "select Pwd from LogUtilisateur";
+                    Variable.cmd.CommandType = CommandType.Text;
+                    Variable.cmd.CommandText = sqlstr;
+                    Variable.cmd.Connection = Variable.conn;
+                    Variable.dtrd = Variable.cmd.ExecuteReader();
+                    while (Variable.dtrd.Read())
+                    {
+                        enr2 = Variable.dtrd["Pwd"].ToString();
+                        return enr2;
+                    }
+                    if (Variable.dtrd != null)
+                    {
+                        Variable.dtrd.Close();
+                    }
+                    if (Variable.conn.State == ConnectionState.Open)
+                    {
+                        Variable.conn.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }*/
     }
 }

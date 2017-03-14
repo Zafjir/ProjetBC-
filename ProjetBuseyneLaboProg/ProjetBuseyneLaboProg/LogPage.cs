@@ -96,7 +96,7 @@ namespace ProjetBuseyneLaboProg
                     Variable.dtrd = Variable.cmd.ExecuteReader();
                     while (Variable.dtrd.Read())
                     {
-                        enr = Variable.dtrd["UserName"].ToString() + "" + Variable.dtrd["Password"].ToString();
+                        enr = Variable.dtrd["UsName"].ToString() + "" + Variable.dtrd["Pwd"].ToString();
                         log = Variable.username + Variable.password;
                         if (log == enr)
                         {
@@ -104,7 +104,7 @@ namespace ProjetBuseyneLaboProg
                             Form3 form3 = new Form3();
                             form3.ShowDialog();
                         }
-                        if (Variable.dtrd != null)
+                        if (Variable.dtrd == null)
                         {
                             Variable.dtrd.Close();
                         }
