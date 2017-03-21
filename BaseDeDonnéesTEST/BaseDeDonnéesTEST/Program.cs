@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjetBuseyneLaboProg
+namespace BaseDeDonnéesTEST
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace ProjetBuseyneLaboProg
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogPage());
+            Application.Run(new Form1());
         }
     }
 }
