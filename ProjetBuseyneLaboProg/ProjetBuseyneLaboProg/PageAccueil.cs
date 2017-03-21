@@ -62,7 +62,7 @@ namespace ProjetBuseyneLaboProg
                 {
                     retourBt.Visible = true;
                     list.Visible = true;
-                    int newWidth = this.Size.Width + 3;
+                    int newWidth = this.Size.Width + 4;
                     this.Size = new Size(newWidth, this.Size.Height);
                     label1.Width = newWidth;
                     label1.Location = new Point(3, 9);
@@ -77,7 +77,7 @@ namespace ProjetBuseyneLaboProg
             {
                 if (this.Size.Width > 253)
                 {
-                    int newWidth = this.Size.Width - 3;
+                    int newWidth = this.Size.Width - 4;
                     this.Size = new Size(newWidth, this.Size.Height);
                     label1.Width = newWidth;
                     label1.Location = new Point(3, 9);

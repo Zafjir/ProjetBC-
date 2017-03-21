@@ -98,6 +98,7 @@ namespace ProjetBuseyneLaboProg
                     {
                         enr = Variable.dtrd["UsName"].ToString() + "" + Variable.dtrd["Pwd"].ToString();
                         log = Variable.username + Variable.password;
+                        //MessageBox.Show("testAdmin");
                         if (log == enr)
                         {
                             Variable.conn.Close();
@@ -109,10 +110,18 @@ namespace ProjetBuseyneLaboProg
                             Variable.dtrd.Close();
                         }
 
+                        if (Variable.conn.State == ConnectionState.Open)
+                        {
+                            Variable.conn.Close();
+                        }
+
+                        Variable.conn.Open();
                         if (log != enr)
                         {
+                           // MessageBox.Show("Arrivée dans le test utilisateur");
                             if (Variable.conn.State == ConnectionState.Open)
                             {
+                               // MessageBox.Show("Arrivée dans le if");
                                 Variable.username = textBox1.Text;
                                 Variable.password = tb_password.Text;
                                 sqlstr = "select * from LogUtilisateur";
@@ -120,8 +129,10 @@ namespace ProjetBuseyneLaboProg
                                 Variable.cmd.CommandText = sqlstr;
                                 Variable.cmd.Connection = Variable.conn;
                                 Variable.dtrd = Variable.cmd.ExecuteReader();
+                                //MessageBox.Show("Enovoie de la commande");
                                 while (Variable.dtrd.Read())
                                 {
+                                   // MessageBox.Show("Test User");
                                     enr = Variable.dtrd["UsName"].ToString() + "" + Variable.dtrd["Pwd"].ToString();
                                     log = Variable.username + Variable.password;
                                     if (log == enr)
