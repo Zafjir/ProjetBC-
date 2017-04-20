@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cb_languageSelect = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,6 +40,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.bt_createAccount = new System.Windows.Forms.Button();
             this.button_ok = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbHeure = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -46,11 +52,12 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(93, 9);
+            this.label1.Location = new System.Drawing.Point(69, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 20);
+            this.label1.Size = new System.Drawing.Size(273, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Gestion de tournois de jeux";
+            this.label1.Text = "Games championships managing";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // cb_languageSelect
             // 
@@ -62,6 +69,7 @@
             this.cb_languageSelect.Name = "cb_languageSelect";
             this.cb_languageSelect.Size = new System.Drawing.Size(121, 21);
             this.cb_languageSelect.TabIndex = 1;
+            this.cb_languageSelect.SelectedIndexChanged += new System.EventHandler(this.cb_languageSelect_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -144,11 +152,26 @@
             this.button_ok.UseVisualStyleBackColor = true;
             this.button_ok.Click += new System.EventHandler(this.button_ok_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lbHeure
+            // 
+            this.lbHeure.AutoSize = true;
+            this.lbHeure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbHeure.Location = new System.Drawing.Point(429, 157);
+            this.lbHeure.Name = "lbHeure";
+            this.lbHeure.Size = new System.Drawing.Size(2, 15);
+            this.lbHeure.TabIndex = 12;
+            // 
             // LogPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 190);
+            this.ClientSize = new System.Drawing.Size(531, 190);
+            this.Controls.Add(this.lbHeure);
             this.Controls.Add(this.button_ok);
             this.Controls.Add(this.bt_createAccount);
             this.Controls.Add(this.button1);
@@ -165,6 +188,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Projet en laboratoire de programmation";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,6 +207,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button bt_createAccount;
         private System.Windows.Forms.Button button_ok;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbHeure;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

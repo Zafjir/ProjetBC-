@@ -13,7 +13,10 @@ namespace ProjetBuseyneLaboProg
 {
     public partial class LogPage : Form
     {
-        
+        int cptSecondes;
+        int cptHeures;
+        int cptMinutes;
+
         public LogPage()
         {
             InitializeComponent();
@@ -31,6 +34,7 @@ namespace ProjetBuseyneLaboProg
             tb_password.PasswordChar = '*';
             tb_password.MaxLength = 14;
             Variable.conn.ConnectionString = Properties.Settings.Default.OledbConnectionString2010;
+            toolTip1.SetToolTip(bt_createAccount, "creer un compte utilisateur");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -81,7 +85,7 @@ namespace ProjetBuseyneLaboProg
         {
             string log;
             string sqlstr, enr;
-            
+
             try
             {
                 Variable.conn.Open();
@@ -118,10 +122,10 @@ namespace ProjetBuseyneLaboProg
                         Variable.conn.Open();
                         if (log != enr)
                         {
-                           // MessageBox.Show("Arrivée dans le test utilisateur");
+                            // MessageBox.Show("Arrivée dans le test utilisateur");
                             if (Variable.conn.State == ConnectionState.Open)
                             {
-                               // MessageBox.Show("Arrivée dans le if");
+                                // MessageBox.Show("Arrivée dans le if");
                                 Variable.username = textBox1.Text;
                                 Variable.password = tb_password.Text;
                                 sqlstr = "select * from LogUtilisateur";
@@ -132,7 +136,7 @@ namespace ProjetBuseyneLaboProg
                                 //MessageBox.Show("Enovoie de la commande");
                                 while (Variable.dtrd.Read())
                                 {
-                                   // MessageBox.Show("Test User");
+                                    // MessageBox.Show("Test User");
                                     enr = Variable.dtrd["UsName"].ToString() + "" + Variable.dtrd["Pwd"].ToString();
                                     log = Variable.username + Variable.password;
                                     if (log == enr)
@@ -155,7 +159,38 @@ namespace ProjetBuseyneLaboProg
                         }
                     }
                 }
-                }catch (Exception ex){}
+            }
+            catch (Exception ex) { }
+        }
+
+        private void cb_languageSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            string msg;
+            DateTime dt;
+            dt = DateTime.Now;
+            msg = dt.ToString("t");
+            lbHeure.Text = msg;
+            cptSecondes++;
+            if (cptSecondes == 60)
+            {
+                cptMinutes++;
+                cptSecondes = 0;
+            }
+            if (cptMinutes == 60)
+            {
+                cptHeures++;
+                cptMinutes = 0;
+            }
         }
     }
 }

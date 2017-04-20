@@ -25,11 +25,20 @@ namespace ProjetBuseyneLaboProg.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\thoma\\OneDrive\\Documents\\E" +
-            "cole\\Laboratoire de programmation\\ProjetBuseyneC#\\GDC.accdb")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\salah-dine\\Downloads\\Proje" +
+            "tBC--master\\GDC.accdb")]
         public string OledbConnectionString2010 {
             get {
                 return ((string)(this["OledbConnectionString2010"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Setting {
+            get {
+                return ((string)(this["Setting"]));
             }
         }
     }

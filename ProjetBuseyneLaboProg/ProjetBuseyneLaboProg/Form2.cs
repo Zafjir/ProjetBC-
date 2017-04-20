@@ -50,5 +50,31 @@ namespace ProjetBuseyneLaboProg
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (cb_languageSelect.Text == "Français")
+            {
+                label1.Text = "Gestion de tournois de jeux";
+                label2.Text = "Créer un nouveau compte";
+                label3.Text = "Nom de compte";
+                label4.Text = "Mot de passe";
+                label5.Text = "Mot de passe de nouveau";
+                bt_back.Text = "Retour";
+                button1.Text = "Confirmer langage";
+                bt_logConfirm.Text = "Confirmer";
+            }
+            if (cb_languageSelect.Text == "English")
+            {
+                label1.Text = "Games championships managing";
+                label2.Text = "Create a new account";
+                label3.Text = "Username";
+                label4.Text = "Password";
+                label5.Text = "Password again";
+                bt_back.Text = "Back";
+                button1.Text = "Confirm language";
+                bt_logConfirm.Text = "Confirm";
+            }
+        }
     }
 }
