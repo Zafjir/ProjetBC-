@@ -12,11 +12,7 @@ using System.Data.OleDb;
 namespace ProjetBuseyneLaboProg
 {
     public partial class LogPage : Form
-    {
-        int cptSecondes;
-        int cptHeures;
-        int cptMinutes;
-
+    { 
         public LogPage()
         {
             InitializeComponent();
@@ -34,7 +30,6 @@ namespace ProjetBuseyneLaboProg
             tb_password.PasswordChar = '*';
             tb_password.MaxLength = 14;
             Variable.conn.ConnectionString = Properties.Settings.Default.OledbConnectionString2010;
-            toolTip1.SetToolTip(bt_createAccount, "creer un compte utilisateur");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -171,26 +166,6 @@ namespace ProjetBuseyneLaboProg
         private void label1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            string msg;
-            DateTime dt;
-            dt = DateTime.Now;
-            msg = dt.ToString("t");
-            lbHeure.Text = msg;
-            cptSecondes++;
-            if (cptSecondes == 60)
-            {
-                cptMinutes++;
-                cptSecondes = 0;
-            }
-            if (cptMinutes == 60)
-            {
-                cptHeures++;
-                cptMinutes = 0;
-            }
         }
     }
 }

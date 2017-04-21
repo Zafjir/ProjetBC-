@@ -38,8 +38,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.bt_logConfirm = new System.Windows.Forms.Button();
             this.bt_back = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.cb_languageSelect = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -111,7 +109,7 @@
             // 
             // bt_logConfirm
             // 
-            this.bt_logConfirm.Location = new System.Drawing.Point(412, 146);
+            this.bt_logConfirm.Location = new System.Drawing.Point(215, 146);
             this.bt_logConfirm.Name = "bt_logConfirm";
             this.bt_logConfirm.Size = new System.Drawing.Size(75, 23);
             this.bt_logConfirm.TabIndex = 9;
@@ -129,34 +127,11 @@
             this.bt_back.UseVisualStyleBackColor = true;
             this.bt_back.Click += new System.EventHandler(this.bt_back_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(302, 146);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "confirm language";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // cb_languageSelect
-            // 
-            this.cb_languageSelect.FormattingEnabled = true;
-            this.cb_languageSelect.Items.AddRange(new object[] {
-            "Français",
-            "English"});
-            this.cb_languageSelect.Location = new System.Drawing.Point(147, 148);
-            this.cb_languageSelect.Name = "cb_languageSelect";
-            this.cb_languageSelect.Size = new System.Drawing.Size(121, 21);
-            this.cb_languageSelect.TabIndex = 12;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 194);
-            this.Controls.Add(this.cb_languageSelect);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(331, 180);
             this.Controls.Add(this.bt_back);
             this.Controls.Add(this.bt_logConfirm);
             this.Controls.Add(this.label5);
@@ -187,7 +162,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button bt_logConfirm;
         private System.Windows.Forms.Button bt_back;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cb_languageSelect;
     }
 }

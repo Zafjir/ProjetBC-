@@ -136,9 +136,9 @@
             // 
             // button_ok
             // 
-            this.button_ok.Location = new System.Drawing.Point(274, 114);
+            this.button_ok.Location = new System.Drawing.Point(316, 114);
             this.button_ok.Name = "button_ok";
-            this.button_ok.Size = new System.Drawing.Size(68, 23);
+            this.button_ok.Size = new System.Drawing.Size(95, 23);
             this.button_ok.TabIndex = 11;
             this.button_ok.Text = "Confirm";
             this.button_ok.UseVisualStyleBackColor = true;

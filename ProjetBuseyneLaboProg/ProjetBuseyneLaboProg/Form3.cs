@@ -30,6 +30,12 @@ namespace ProjetBuseyneLaboProg
 
         private void button4_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
+            label1.Text = "User name";
+            label2.Text = "Password";
+            label3.Text = " ";
+            label4.Text = " ";
             string log;
             string sqlstr;
             string enr1, enr2;
@@ -61,14 +67,23 @@ namespace ProjetBuseyneLaboProg
                         Variable.conn.Close();
                     }
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-            }
+        }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
+            listBox3.Items.Clear();
+            listBox4.Items.Clear();
+            label1.Text = "User name";
+            label2.Text = "Password";
+            label3.Text = " ";
+            label4.Text = " ";
             string log;
             string sqlstr;
             string enr1, enr2;
@@ -110,6 +125,58 @@ namespace ProjetBuseyneLaboProg
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
+            listBox3.Items.Clear();
+            listBox4.Items.Clear();
+            label1.Text = "Name";
+            label2.Text = "Description";
+            label3.Text = "Responsable name";
+            label4.Text = "Email";
+            string log;
+            string sqlstr;
+            string enr1, enr2, enr3, enr4;
+
+            try
+            {
+                Variable.conn.Open();
+                if (Variable.conn.State == ConnectionState.Open)
+                {
+
+                    sqlstr = "select * from Organisation";
+                    Variable.cmd.CommandType = CommandType.Text;
+                    Variable.cmd.CommandText = sqlstr;
+                    Variable.cmd.Connection = Variable.conn;
+                    Variable.dtrd = Variable.cmd.ExecuteReader();
+                    while (Variable.dtrd.Read())
+                    {
+                        enr1 = Variable.dtrd["Nomorganisation"].ToString();
+                        enr2 = Variable.dtrd["Description"].ToString();
+                        enr3 = Variable.dtrd["Nomresponsable"].ToString();
+                        enr4 = Variable.dtrd["Email"].ToString();
+                        listBox1.Items.Add(enr1);
+                        listBox2.Items.Add(enr2);
+                        listBox3.Items.Add(enr3);
+                        listBox4.Items.Add(enr4);
+                    }
+                    if (Variable.dtrd != null)
+                    {
+                        Variable.dtrd.Close();
+                    }
+                    if (Variable.conn.State == ConnectionState.Open)
+                    {
+                        Variable.conn.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
