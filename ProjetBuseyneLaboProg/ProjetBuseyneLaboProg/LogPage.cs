@@ -179,7 +179,7 @@ namespace ProjetBuseyneLaboProg
             DateTime dt;
             dt = DateTime.Now;
             msg = dt.ToString("t");
-            lbHeure.Text = msg;
+           // lbHeure.Text = msg;
             cptSecondes++;
             if (cptSecondes == 60)
             {
