@@ -22,8 +22,8 @@ namespace ProjetBuseyneLaboProg
         TextBox tb_NomOrganisation = new TextBox();
         Label lb_NomGerant = new Label();
         TextBox tb_NomGerant = new TextBox();
-        Label lb_nbJoueurs = new Label();
-        TextBox tb_nbJoueurs = new TextBox();
+        Label lb_description = new Label();
+        TextBox tb_description = new TextBox();
         Label lb_NomOrgansation = new Label();
         Button confirmBt = new Button();
         //Choses pour le menu tournoi
@@ -35,6 +35,10 @@ namespace ProjetBuseyneLaboProg
         Label tournoi_lb_calendrier = new Label();
         TextBox tournoi_tb_calendrier = new TextBox();
         //Nom type calendrier
+        TextBox tb_Email = new TextBox();
+        Label lb_Email = new Label();
+
+
         public PageAccueil()
         {
             InitializeComponent();
@@ -53,6 +57,29 @@ namespace ProjetBuseyneLaboProg
         private void retourBt_Click(object sender, EventArgs e)
         {
             agrandirPage = 2;
+        }
+
+        private void confirmBt_Click(object sender, EventArgs e)
+        {
+            int nbm;
+
+            if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
+
+            Variable.cmd.CommandText = "insert into Organisation(Nomorganisation,Description,Nomresponsable,Email) values('" + tb_NomOrganisation.Text + "','" + tb_description.Text + "','" + tb_NomGerant.Text + "','" + tb_Email.Text +"')";
+            Variable.cmd.Connection = Variable.conn;
+            try
+            {
+                nbm = Variable.cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            { }
+
+            Variable.conn.Close();
+            MessageBox.Show("Organisation créée.");
+            tb_NomOrganisation.Clear();
+            tb_NomGerant.Clear();
+            tb_Email.Clear();
+            tb_description.Clear();
         }
 
         private void PageAccueil_Load(object sender, EventArgs e)
@@ -108,8 +135,10 @@ namespace ProjetBuseyneLaboProg
                         tb_NomOrganisation.Visible = false;
                         tb_NomGerant.Visible = false;
                         lb_NomGerant.Visible = false;
-                        tb_nbJoueurs.Visible = false;
-                        lb_nbJoueurs.Visible = false;
+                        tb_description.Visible = false;
+                        lb_description.Visible = false;
+                        tb_Email.Visible = false;
+                        lb_Email.Visible = false;
                         confirmBt.Visible = false;
                         label1.Width = 229;
                         agrandirPage = 0;
@@ -127,16 +156,22 @@ namespace ProjetBuseyneLaboProg
                     lb_NomGerant.Location = new Point(250, 80);
                     tb_NomGerant.Location = new Point(350, 80);
                     tb_NomGerant.Size = new Size(200, 20);
-                    lb_nbJoueurs.Location = new Point(250, 110);
-                    tb_nbJoueurs.Location = new Point(350, 110);
-                    tb_nbJoueurs.Size = new Size(200, 20);
-                    confirmBt.Location = new Point(250, 150);
+                    lb_description.Location = new Point(250, 110);
+                    tb_description.Location = new Point(350, 110);
+                    tb_description.Size = new Size(200, 20);
+                    lb_Email.Location = new Point(250, 140);
+                    tb_Email.Location = new Point(350, 140);
+                    tb_Email.Size = new Size(200, 20);
+                    confirmBt.Location = new Point(250, 180);
                     confirmBt.Size = new Size(103, 23);
 
+
                     lb_NomOrgansation.Text = "Nom : ";
-                    lb_NomGerant.Text = "Nom du gérant : ";
-                    lb_nbJoueurs.Text = "Nbre de joueurs : ";
+                    lb_NomGerant.Text = "Responsable : ";
+                    lb_description.Text = "Description : ";
+                    lb_Email.Text = "Email : ";
                     confirmBt.Text = "Confirmer";
+                    confirmBt.Click += new EventHandler(confirmBt_Click);
 
                     if (itemCree == false)
                     {
@@ -153,8 +188,10 @@ namespace ProjetBuseyneLaboProg
                     this.Controls.Add(tb_NomOrganisation);
                     this.Controls.Add(tb_NomGerant);
                     this.Controls.Add(lb_NomGerant);
-                    this.Controls.Add(tb_nbJoueurs);
-                    this.Controls.Add(lb_nbJoueurs);
+                    this.Controls.Add(tb_description);
+                    this.Controls.Add(lb_description);
+                    this.Controls.Add(tb_Email);
+                    this.Controls.Add(lb_Email);
                     this.Controls.Add(confirmBt);
                     itemCree2 = true;
                 }
@@ -165,8 +202,10 @@ namespace ProjetBuseyneLaboProg
                     lb_NomOrgansation.Visible = true;
                     tb_NomGerant.Visible = true;
                     lb_NomGerant.Visible = true;
-                    tb_nbJoueurs.Visible = true;
-                    lb_nbJoueurs.Visible = true;
+                    tb_description.Visible = true;
+                    lb_description.Visible = true;
+                    tb_Email.Visible = true;
+                    lb_Email.Visible = true;
                     confirmBt.Visible = true;
                     int newWidth = this.Size.Width + 4;
                     this.Size = new Size(newWidth, this.Size.Height);
