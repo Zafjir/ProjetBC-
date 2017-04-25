@@ -15,7 +15,7 @@ namespace ProjetBuseyneLaboProg
         int agrandirPage = 0;
         bool itemCree = false;
         bool itemCree2 = false;
-
+        bool itemCree3 = false;
         Button retourBt = new Button();
         ListBox list = new ListBox();
 
@@ -26,6 +26,15 @@ namespace ProjetBuseyneLaboProg
         TextBox tb_description = new TextBox();
         Label lb_NomOrgansation = new Label();
         Button confirmBt = new Button();
+        //Choses pour le menu tournoi
+        Button tournoi_bt_confirm = new Button();
+        Label tournoi_lb_nomTournoi = new Label();
+        TextBox tournoi_tb_nomTournoi = new TextBox();
+        Label tournoi_lb_type = new Label();
+        TextBox tournoi_tb_type = new TextBox();
+        Label tournoi_lb_calendrier = new Label();
+        TextBox tournoi_tb_calendrier = new TextBox();
+        //Nom type calendrier
         TextBox tb_Email = new TextBox();
         Label lb_Email = new Label();
 
@@ -129,7 +138,7 @@ namespace ProjetBuseyneLaboProg
                     label1.Width = newWidth;
                     label1.Location = new Point(3, 9);
                     if (this.Size.Width==254)
-                    {
+                     {
                         list.Visible = false;
                         retourBt.Visible = false;
                         lb_NomOrgansation.Visible = false;
@@ -219,6 +228,59 @@ namespace ProjetBuseyneLaboProg
                     agrandirPage = 0;
                 }
             }
+            if (agrandirPage == 4)
+            {
+                if (itemCree3 == false)
+                {
+                    tournoi_bt_confirm.Location = new Point(250, 150);
+                    tournoi_lb_nomTournoi.Location = new Point(250, 50);
+                    tournoi_tb_nomTournoi.Location = new Point(350, 50);
+                    tournoi_lb_type.Location = new Point(250, 80);
+                    tournoi_tb_type.Location = new Point(350, 80);
+                    tournoi_lb_calendrier.Location = new Point(250, 110);
+                    tournoi_tb_calendrier.Location = new Point(350, 110);
+                    tournoi_lb_nomTournoi.Text = "Nom du Tournoi";
+                    tournoi_lb_type.Text = "Type de tournoi";
+                    tournoi_lb_calendrier.Text = "Date du tournoi";
+                    tournoi_bt_confirm.Text = "Confirmer";
+                    if (itemCree == false && itemCree2)
+                    {
+                        retourBt.Size = new Size(23, 23);
+                        retourBt.Location = new Point(157, 337);
+                        retourBt.Text = "<";
+                        this.Controls.Add(retourBt);
+                    }
+                    retourBt.Name = "retourBt";
+                    retourBt.Click += new EventHandler(retourBt_Click);
+                    this.Controls.Add(tournoi_bt_confirm);
+                    this.Controls.Add(tournoi_lb_nomTournoi);
+                    this.Controls.Add(tournoi_tb_nomTournoi);
+                    this.Controls.Add(tournoi_lb_type);
+                    this.Controls.Add(tournoi_tb_type);
+                    this.Controls.Add(tournoi_lb_calendrier);
+                    this.Controls.Add(tournoi_tb_calendrier);
+                    itemCree3 = true;
+                }
+                    if (this.Size.Width < 610 && itemCree3 == true)
+                    {
+                        retourBt.Visible = true;
+                        tournoi_bt_confirm.Visible = true;
+                        tournoi_lb_nomTournoi.Visible = true;
+                        tournoi_lb_type.Visible = true;
+                        tournoi_tb_type.Visible = true;
+                        tournoi_lb_calendrier.Visible = true;
+                        tournoi_tb_calendrier.Visible = true;
+                        int newWidth = this.Size.Width + 4;
+                        this.Size = new Size(newWidth, this.Size.Height);
+                        label1.Width = newWidth;
+                        label1.Location = new Point(3, 9);
+                    }
+                    if (this.Size.Width >= 609)
+                    {
+                        agrandirPage = 0;
+                    }
+                
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -229,6 +291,11 @@ namespace ProjetBuseyneLaboProg
         private void button3_Click(object sender, EventArgs e)
         {
             agrandirPage = 3;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            agrandirPage = 4;
         }
     }
 }
