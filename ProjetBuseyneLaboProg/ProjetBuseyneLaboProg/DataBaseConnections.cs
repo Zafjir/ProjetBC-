@@ -45,7 +45,7 @@ namespace ProjetBuseyneLaboProg
                         if (log == enr)
                         {
                             Variable.conn.Close();
-                            Form3 form3 = new Form3();
+                            PageAdmin form3 = new PageAdmin();
                             form3.ShowDialog();
                         }
                         if (Variable.dtrd == null)

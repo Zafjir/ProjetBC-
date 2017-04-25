@@ -11,9 +11,9 @@ using System.Data.OleDb;
 
 namespace ProjetBuseyneLaboProg
 {
-    public partial class Form2 : Form
+    public partial class CréationCompte : Form
     {
-        public Form2()
+        public CréationCompte()
         {
             InitializeComponent();
         }

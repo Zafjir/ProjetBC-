@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6142E3DC-1286-4E1E-9B12-1D5CA9B630BE}</ProjectGuid>
+    <ProjectGuid>{DA1C2CE3-0664-47CF-B148-FA9B50B2D14A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProjetBuseyneLaboProg</RootNamespace>
-    <AssemblyName>ProjetBuseyneLaboProg</AssemblyName>
+    <RootNamespace>WindowsFormsApplication1</RootNamespace>
+    <AssemblyName>WindowsFormsApplication1</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,73 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="accesDonnées.cs" />
-    <Compile Include="DataBaseConnections.cs" />
     <Compile Include="LogPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LogPage.Designer.cs">
       <DependentUpon>LogPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="CréationCompte.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CréationCompte.Designer.cs">
-      <DependentUpon>CréationCompte.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PageAccueil_CréerOrganisation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PageAccueil_CréerOrganisation.Designer.cs">
-      <DependentUpon>PageAccueil_CréerOrganisation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PageAccueil_CréerTournoi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PageAccueil_CréerTournoi.Designer.cs">
-      <DependentUpon>PageAccueil_CréerTournoi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PageAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PageAdmin.Designer.cs">
-      <DependentUpon>PageAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PageAccueil.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PageAccueil.Designer.cs">
-      <DependentUpon>PageAccueil.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PageRéglage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PageRéglage.Designer.cs">
-      <DependentUpon>PageRéglage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Variable.cs" />
     <EmbeddedResource Include="LogPage.resx">
       <DependentUpon>LogPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CréationCompte.resx">
-      <DependentUpon>CréationCompte.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PageAccueil_CréerOrganisation.resx">
-      <DependentUpon>PageAccueil_CréerOrganisation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PageAccueil_CréerTournoi.resx">
-      <DependentUpon>PageAccueil_CréerTournoi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PageAdmin.resx">
-      <DependentUpon>PageAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PageAccueil.resx">
-      <DependentUpon>PageAccueil.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PageRéglage.resx">
-      <DependentUpon>PageRéglage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -138,10 +81,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ic_settings_black_24dp.png" />
+    <EmbeddedResource Include="3999603103_15c77b9e86_o.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3999603103_15c77b9e86_o.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sgdfsdfg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_settings_black_24dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

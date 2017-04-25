@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjetBuseyneLaboProg.Properties {
+namespace WindowsFormsApplication1.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ProjetBuseyneLaboProg.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ProjetBuseyneLaboProg.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WindowsFormsApplication1.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,16 @@ namespace ProjetBuseyneLaboProg.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3999603103_15c77b9e86_o {
+            get {
+                object obj = ResourceManager.GetObject("3999603103_15c77b9e86_o", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

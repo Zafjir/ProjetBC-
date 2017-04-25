@@ -11,9 +11,9 @@ using System.Data.OleDb;
 
 namespace ProjetBuseyneLaboProg
 {
-    public partial class Form3 : Form
+    public partial class PageAdmin : Form
     {
-        public Form3()
+        public PageAdmin()
         {
             InitializeComponent();
         }

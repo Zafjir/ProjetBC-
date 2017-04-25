@@ -1,6 +1,6 @@
 ﻿namespace ProjetBuseyneLaboProg
 {
-    partial class Form3
+    partial class PageAdmin
     {
         /// <summary>
         /// Required designer variable.
