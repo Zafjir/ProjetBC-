@@ -97,8 +97,18 @@ namespace ProjetBuseyneLaboProg
                 }
                 if (this.Size.Width < 710&&itemCree==true)
                 {
+
                     retourBt.Visible = true;
                     list.Visible = true;
+                    lb_NomOrgansation.Visible = false;
+                    tb_NomOrganisation.Visible = false;
+                    tb_NomGerant.Visible = false;
+                    lb_NomGerant.Visible = false;
+                    tb_description.Visible = false;
+                    lb_description.Visible = false;
+                    tb_Email.Visible = false;
+                    lb_Email.Visible = false;
+                    confirmBt.Visible = false;
                     int newWidth = this.Size.Width + 4;
                     this.Size = new Size(newWidth, this.Size.Height);
                     label1.Width = newWidth;
@@ -188,6 +198,7 @@ namespace ProjetBuseyneLaboProg
                 }
                 if (this.Size.Width < 610 && itemCree2 == true)
                 {
+                    list.Visible = false;
                     retourBt.Visible = true;
                     tb_NomOrganisation.Visible = true;
                     lb_NomOrgansation.Visible = true;
