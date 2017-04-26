@@ -53,7 +53,8 @@ namespace ProjetBuseyneLaboProg
 
         private void button2_Click(object sender, EventArgs e)
         {
-            agrandirPage = 1;
+            PageAccueil_TopDesJeux PageAccueil_TopDesJeux = new PageAccueil_TopDesJeux();
+            PageAccueil_TopDesJeux.Show();
         }
 
         private void retourBt_Click(object sender, EventArgs e)
@@ -66,7 +67,7 @@ namespace ProjetBuseyneLaboProg
 
         private void PageAccueil_Load(object sender, EventArgs e)
         {
-
+            lb_Pseudo.Text = Variable.pseudoConnection;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -77,19 +78,25 @@ namespace ProjetBuseyneLaboProg
         private void button3_Click(object sender, EventArgs e)
         {
             PageAccueil_CréerOrganisation PageAccueil_CréerOrganisation = new PageAccueil_CréerOrganisation();
-            PageAccueil_CréerOrganisation.ShowDialog();
+            PageAccueil_CréerOrganisation.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             PageAccueil_CréerTournoi PageAccueil_CréerTournoi = new PageAccueil_CréerTournoi();
-            PageAccueil_CréerTournoi.ShowDialog();
+            PageAccueil_CréerTournoi.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             PageRéglage PageRéglage = new PageRéglage();
-            PageRéglage.ShowDialog();
+            PageRéglage.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            PageAccueil_VoirTournoi PageAccueil_VoirTournoi = new PageAccueil_VoirTournoi();
+            PageAccueil_VoirTournoi.Show();
         }
     }
 }

@@ -13,5 +13,9 @@ namespace ProjetBuseyneLaboProg
         public static OleDbConnection conn;
         public static OleDbCommand cmd;
         public static OleDbDataReader dtrd;
+
+        public static string pseudoConnection;
+        public static int listing = 4;
+        public static string nbreDeTournoi;
     }
 }

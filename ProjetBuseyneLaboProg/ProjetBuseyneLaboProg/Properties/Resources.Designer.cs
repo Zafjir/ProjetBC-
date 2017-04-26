@@ -63,9 +63,49 @@ namespace ProjetBuseyneLaboProg.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _48564 {
+            get {
+                object obj = ResourceManager.GetObject("48564", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fractal_landscape_smoke_abstract_reflection_76385_5600x3733 {
+            get {
+                object obj = ResourceManager.GetObject("fractal_landscape_smoke_abstract_reflection_76385_5600x3733", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ic_settings_black_24dp {
             get {
                 object obj = ResourceManager.GetObject("ic_settings_black_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_skip_next_black_24dp_2x {
+            get {
+                object obj = ResourceManager.GetObject("ic_skip_next_black_24dp_2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_skip_previous_black_24dp_2x {
+            get {
+                object obj = ResourceManager.GetObject("ic_skip_previous_black_24dp_2x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

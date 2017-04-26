@@ -60,6 +60,12 @@
     <Compile Include="CréationCompte.Designer.cs">
       <DependentUpon>CréationCompte.cs</DependentUpon>
     </Compile>
+    <Compile Include="PageAccueil_Archives.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageAccueil_Archives.Designer.cs">
+      <DependentUpon>PageAccueil_Archives.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageAccueil_CréerOrganisation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,18 @@
     </Compile>
     <Compile Include="PageAccueil_CréerTournoi.Designer.cs">
       <DependentUpon>PageAccueil_CréerTournoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageAccueil_TopDesJeux.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageAccueil_TopDesJeux.Designer.cs">
+      <DependentUpon>PageAccueil_TopDesJeux.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageAccueil_VoirTournoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageAccueil_VoirTournoi.Designer.cs">
+      <DependentUpon>PageAccueil_VoirTournoi.cs</DependentUpon>
     </Compile>
     <Compile Include="PageAdmin.cs">
       <SubType>Form</SubType>
@@ -104,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PageAccueil_CréerTournoi.resx">
       <DependentUpon>PageAccueil_CréerTournoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageAccueil_TopDesJeux.resx">
+      <DependentUpon>PageAccueil_TopDesJeux.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageAccueil_VoirTournoi.resx">
+      <DependentUpon>PageAccueil_VoirTournoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageAdmin.resx">
       <DependentUpon>PageAdmin.cs</DependentUpon>
@@ -142,6 +166,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sgdfsdfg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_skip_next_black_24dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_skip_previous_black_24dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\48564.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fractal_landscape_smoke_abstract_reflection_76385_5600x3733.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

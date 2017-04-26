@@ -113,6 +113,7 @@ namespace ProjetBuseyneLaboProg
                                     log = Variable.username + Variable.password;
                                     if (log == enr)
                                     {
+                                        Variable.pseudoConnection = Variable.username;
                                         Variable.conn.Close();
                                         PageAccueil pageAccueil = new PageAccueil();
                                         pageAccueil.ShowDialog();

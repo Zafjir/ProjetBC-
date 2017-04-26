@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
+            this.lb_Pseudo = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,6 +94,7 @@
             this.button5.TabIndex = 6;
             this.button5.Text = "Voir les tournois";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -144,11 +146,21 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // lb_Pseudo
+            // 
+            this.lb_Pseudo.AutoSize = true;
+            this.lb_Pseudo.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Pseudo.Location = new System.Drawing.Point(12, 58);
+            this.lb_Pseudo.Name = "lb_Pseudo";
+            this.lb_Pseudo.Size = new System.Drawing.Size(0, 16);
+            this.lb_Pseudo.TabIndex = 15;
+            // 
             // PageAccueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 414);
+            this.Controls.Add(this.lb_Pseudo);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -171,5 +183,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label lb_Pseudo;
     }
 }
