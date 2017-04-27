@@ -43,5 +43,13 @@ namespace ProjetBuseyneLaboProg
             tb_typeTournoi.Clear();
             this.Close();
         }
+
+        private void PageAccueil_CréerTournoi_Load(object sender, EventArgs e)
+        {
+            label1.Parent = pictureBox1;
+            label3.Parent = pictureBox1;
+            label4.Parent = pictureBox1;
+            label5.Parent = pictureBox1;
+        }
     }
 }

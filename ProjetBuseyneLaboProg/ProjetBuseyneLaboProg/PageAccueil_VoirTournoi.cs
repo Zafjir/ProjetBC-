@@ -19,6 +19,21 @@ namespace ProjetBuseyneLaboProg
 
         private void PageAccueil_VoirTournoi_Load(object sender, EventArgs e)
         {
+            label1.Parent = pictureBox1;
+            label2.Parent = pictureBox1;
+            label3.Parent = pictureBox1;
+            label4.Parent = pictureBox1;
+            label5.Parent = pictureBox1;
+            lb_Date.Parent = pictureBox1;
+            lb_NomTournoi.Parent = pictureBox1;
+            lb_TypeTournoi.Parent = pictureBox1;
+            lb_TypeTournoi.ForeColor = Color.White;
+            lb_TypeTournoi.BackColor = Color.Transparent;
+            lb_NomTournoi.ForeColor = Color.White;
+            lb_NomTournoi.BackColor = Color.Transparent;
+            lb_Date.ForeColor = Color.White;
+            lb_Date.BackColor = Color.Transparent;
+
             string sqlstr, enr1, enr2, enr3, enr4;
 
             try

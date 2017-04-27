@@ -21,5 +21,11 @@ namespace ProjetBuseyneLaboProg
         {
             this.Close();
         }
+
+        private void PageRéglage_Load(object sender, EventArgs e)
+        {
+            label1.Parent = pictureBox1;
+            label2.Parent = pictureBox1;
+        }
     }
 }

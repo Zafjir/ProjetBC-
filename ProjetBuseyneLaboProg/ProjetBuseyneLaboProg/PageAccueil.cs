@@ -12,35 +12,6 @@ namespace ProjetBuseyneLaboProg
 {
     public partial class PageAccueil : Form
     {
-        int agrandirPage = 0;
-        bool itemCree = false;
-        bool itemCree2 = false;
-        bool itemCree3 = false;
-        bool itemCree4 = false;
-
-        Button retourBt = new Button();
-        ListBox list = new ListBox();
-
-        TextBox tb_NomOrganisation = new TextBox();
-        Label lb_NomGerant = new Label();
-        TextBox tb_NomGerant = new TextBox();
-        Label lb_description = new Label();
-        TextBox tb_description = new TextBox();
-        Label lb_NomOrgansation = new Label();
-        Button confirmBt = new Button();
-        //Choses pour le menu tournoi
-        Button tournoi_bt_confirm = new Button();
-        Label tournoi_lb_nomTournoi = new Label();
-        TextBox tournoi_tb_nomTournoi = new TextBox();
-        Label tournoi_lb_type = new Label();
-        TextBox tournoi_tb_type = new TextBox();
-        Label tournoi_lb_calendrier = new Label();
-        TextBox tournoi_tb_calendrier = new TextBox();
-        //Nom type calendrier
-        TextBox tb_Email = new TextBox();
-        Label lb_Email = new Label();
-
-
         public PageAccueil()
         {
             InitializeComponent();
@@ -58,9 +29,7 @@ namespace ProjetBuseyneLaboProg
         }
 
         private void retourBt_Click(object sender, EventArgs e)
-        {
-            agrandirPage = 2;
-        }
+        {}
 
         private void confirmBt_Click(object sender, EventArgs e)
         {}
@@ -68,6 +37,12 @@ namespace ProjetBuseyneLaboProg
         private void PageAccueil_Load(object sender, EventArgs e)
         {
             lb_Pseudo.Text = Variable.pseudoConnection;
+            lb_Pseudo.Parent = pictureBox1;
+            groupBox1.Parent = pictureBox1;
+            label1.Parent = pictureBox1;
+            lb_Pseudo.Parent = pictureBox1;
+            lb_Pseudo.BackColor = Color.Transparent;
+            lb_Pseudo.ForeColor = Color.White;
         }
 
         private void label1_Click(object sender, EventArgs e)

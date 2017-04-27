@@ -30,6 +30,12 @@ namespace ProjetBuseyneLaboProg
             tb_password.PasswordChar = '*';
             tb_password.MaxLength = 14;
             Variable.conn.ConnectionString = Properties.Settings.Default.OledbConnectionString2010;
+
+            label3.Parent = pictureBox1;
+            label1.Parent = pictureBox1;
+            label4.Parent = pictureBox1;
+            label5.Parent = pictureBox1;
+            bt_login.Parent = pictureBox1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -155,6 +161,11 @@ namespace ProjetBuseyneLaboProg
         {
             PageRéglage PageRéglage = new PageRéglage();
             PageRéglage.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

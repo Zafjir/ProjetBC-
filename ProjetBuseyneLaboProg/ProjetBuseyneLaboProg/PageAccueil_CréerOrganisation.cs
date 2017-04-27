@@ -45,5 +45,14 @@ namespace ProjetBuseyneLaboProg
             tb_description.Clear();
             this.Close();
         }
+
+        private void PageAccueil_CréerOrganisation_Load(object sender, EventArgs e)
+        {
+            label1.Parent = pictureBox1;
+            label2.Parent = pictureBox1;
+            label3.Parent = pictureBox1;
+            label4.Parent = pictureBox1;
+            label5.Parent = pictureBox1;
+        }
     }
 }

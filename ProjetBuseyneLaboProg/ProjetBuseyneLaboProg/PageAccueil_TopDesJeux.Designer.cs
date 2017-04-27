@@ -29,12 +29,25 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
+            this.lb_Top1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lb_Top2 = new System.Windows.Forms.Label();
+            this.lb_Top3 = new System.Windows.Forms.Label();
+            this.lb_NomJeu = new System.Windows.Forms.Label();
+            this.lb_Description = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(631, 325);
+            this.button1.Location = new System.Drawing.Point(12, 362);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 44);
             this.button1.TabIndex = 3;
@@ -42,20 +55,162 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lb_Top1
+            // 
+            this.lb_Top1.AutoSize = true;
+            this.lb_Top1.BackColor = System.Drawing.Color.Transparent;
+            this.lb_Top1.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Top1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lb_Top1.Location = new System.Drawing.Point(6, 33);
+            this.lb_Top1.Name = "lb_Top1";
+            this.lb_Top1.Size = new System.Drawing.Size(59, 20);
+            this.lb_Top1.TabIndex = 4;
+            this.lb_Top1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(345, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(213, 35);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Top des jeux";
+            // 
+            // lb_Top2
+            // 
+            this.lb_Top2.AutoSize = true;
+            this.lb_Top2.BackColor = System.Drawing.Color.Transparent;
+            this.lb_Top2.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Top2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lb_Top2.Location = new System.Drawing.Point(6, 84);
+            this.lb_Top2.Name = "lb_Top2";
+            this.lb_Top2.Size = new System.Drawing.Size(59, 20);
+            this.lb_Top2.TabIndex = 27;
+            this.lb_Top2.Text = "label3";
+            // 
+            // lb_Top3
+            // 
+            this.lb_Top3.AutoSize = true;
+            this.lb_Top3.BackColor = System.Drawing.Color.Transparent;
+            this.lb_Top3.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Top3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lb_Top3.Location = new System.Drawing.Point(6, 135);
+            this.lb_Top3.Name = "lb_Top3";
+            this.lb_Top3.Size = new System.Drawing.Size(59, 20);
+            this.lb_Top3.TabIndex = 28;
+            this.lb_Top3.Text = "label4";
+            // 
+            // lb_NomJeu
+            // 
+            this.lb_NomJeu.AutoSize = true;
+            this.lb_NomJeu.BackColor = System.Drawing.Color.Transparent;
+            this.lb_NomJeu.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_NomJeu.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lb_NomJeu.Location = new System.Drawing.Point(256, 80);
+            this.lb_NomJeu.Name = "lb_NomJeu";
+            this.lb_NomJeu.Size = new System.Drawing.Size(65, 20);
+            this.lb_NomJeu.TabIndex = 29;
+            this.lb_NomJeu.Text = "label5";
+            // 
+            // lb_Description
+            // 
+            this.lb_Description.AutoSize = true;
+            this.lb_Description.BackColor = System.Drawing.Color.Transparent;
+            this.lb_Description.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Description.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lb_Description.Location = new System.Drawing.Point(256, 152);
+            this.lb_Description.Name = "lb_Description";
+            this.lb_Description.Size = new System.Drawing.Size(52, 19);
+            this.lb_Description.TabIndex = 31;
+            this.lb_Description.Text = "label1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProjetBuseyneLaboProg.Properties.Resources.maxresdefault;
+            this.pictureBox1.Location = new System.Drawing.Point(643, 55);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(268, 179);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::ProjetBuseyneLaboProg.Properties.Resources.sgdfsdfg;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(924, 425);
+            this.pictureBox2.TabIndex = 33;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(260, 283);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(651, 123);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "label1";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.lb_Top1);
+            this.groupBox1.Controls.Add(this.lb_Top2);
+            this.groupBox1.Controls.Add(this.lb_Top3);
+            this.groupBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox1.Location = new System.Drawing.Point(12, 80);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(224, 192);
+            this.groupBox1.TabIndex = 35;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Sélection";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
             // PageAccueil_TopDesJeux
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 381);
+            this.ClientSize = new System.Drawing.Size(923, 423);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lb_Description);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lb_NomJeu);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox2);
             this.Name = "PageAccueil_TopDesJeux";
             this.Text = "PageAccueil_TopDesJeux";
+            this.Load += new System.EventHandler(this.PageAccueil_TopDesJeux_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lb_Top1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lb_Top2;
+        private System.Windows.Forms.Label lb_Top3;
+        private System.Windows.Forms.Label lb_NomJeu;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lb_Description;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
