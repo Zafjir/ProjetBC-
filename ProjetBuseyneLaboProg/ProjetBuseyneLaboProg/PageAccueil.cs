@@ -12,6 +12,7 @@ namespace ProjetBuseyneLaboProg
 {
     public partial class PageAccueil : Form
     {
+       
         public PageAccueil()
         {
             InitializeComponent();
@@ -43,6 +44,35 @@ namespace ProjetBuseyneLaboProg
             lb_Pseudo.Parent = pictureBox1;
             lb_Pseudo.BackColor = Color.Transparent;
             lb_Pseudo.ForeColor = Color.White;
+
+            string sqlstr;
+            try
+            {
+                Variable.conn.Open();
+                if (Variable.conn.State == ConnectionState.Open)
+                {
+                    sqlstr = "select * from Tournoi order by N° desc";
+                    Variable.cmd.CommandType = CommandType.Text;
+                    Variable.cmd.CommandText = sqlstr;
+                    Variable.cmd.Connection = Variable.conn;
+                    Variable.dtrd = Variable.cmd.ExecuteReader();
+                    while (Variable.dtrd.Read())
+                    {
+                        Variable.IDPremierTournoi = Variable.dtrd["N°"].ToString();
+                    }
+                    if (Variable.dtrd == null)
+                    {
+                        Variable.dtrd.Close();
+                    }
+
+                    if (Variable.conn.State == ConnectionState.Open)
+                    {
+                        Variable.conn.Close();
+                    }
+                    Variable.listing = Convert.ToInt32(Variable.IDPremierTournoi);
+                }
+            }
+            catch (Exception ex) {}
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -72,6 +102,50 @@ namespace ProjetBuseyneLaboProg
         {
             PageAccueil_VoirTournoi PageAccueil_VoirTournoi = new PageAccueil_VoirTournoi();
             PageAccueil_VoirTournoi.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            PageAccueil_GérerMonTournoi PageAccueil_GérerMonTournoi = new PageAccueil_GérerMonTournoi();
+            PageAccueil_GérerMonTournoi.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            PageAccueil_Archives PageAccueil_Archives = new PageAccueil_Archives();
+            PageAccueil_Archives.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Variable.langue == 0)
+            {
+                label1.Text = langage.PageAccueilTitreFR;
+                button3.Text = langage.PageAccueilCréerOrgaFR;
+                button4.Text = langage.PageAccueilCréerTournoiFR;
+                button5.Text = langage.PageAccueilVoirTournoiFR;
+                button2.Text = langage.PageAccueilTopDesJeuxFR;
+                button6.Text = langage.PageAccueilGestionFR;
+                button8.Text = langage.PageAccueilCloreFR;
+                button1.Text = langage.UniBoutonFermerFR;
+            }
+            if (Variable.langue == 1)
+            {
+                label1.Location = new Point(15, 9);
+                label1.Text = langage.PageAccueilTitreEN;
+                button3.Text = langage.PageAccueilCréerOrgaEN;
+                button4.Text = langage.PageAccueilCréerTournoiEN;
+                button5.Text = langage.PageAccueilVoirTournoiEN;
+                button2.Text = langage.PageAccueilTopDesJeuxEN;
+                button6.Text = langage.PageAccueilGestionEN;
+                button8.Text = langage.PageAccueilCloreEN;
+                button1.Text = langage.UniBoutonFermerEN;
+            }
         }
     }
 }

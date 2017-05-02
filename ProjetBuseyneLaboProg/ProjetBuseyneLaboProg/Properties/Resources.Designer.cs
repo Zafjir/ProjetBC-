@@ -73,6 +73,26 @@ namespace ProjetBuseyneLaboProg.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _78eb7dcb0b15_counter_strike_global_offensive_4__2 {
+            get {
+                object obj = ResourceManager.GetObject("78eb7dcb0b15_counter-strike_global_offensive_4__2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap facebook_share {
+            get {
+                object obj = ResourceManager.GetObject("facebook-share", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fractal_landscape_smoke_abstract_reflection_76385_5600x3733 {
             get {
                 object obj = ResourceManager.GetObject("fractal_landscape_smoke_abstract_reflection_76385_5600x3733", resourceCulture);
@@ -116,6 +136,16 @@ namespace ProjetBuseyneLaboProg.Properties {
         internal static System.Drawing.Bitmap maxresdefault {
             get {
                 object obj = ResourceManager.GetObject("maxresdefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maxresdefault1 {
+            get {
+                object obj = ResourceManager.GetObject("maxresdefault1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

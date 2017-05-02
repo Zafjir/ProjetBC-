@@ -35,7 +35,7 @@ namespace ProjetBuseyneLaboProg
                 nbm = Variable.cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
-            { }
+            {}
 
             Variable.conn.Close();
             MessageBox.Show("Tournoi créée.");
@@ -46,6 +46,23 @@ namespace ProjetBuseyneLaboProg
 
         private void PageAccueil_CréerTournoi_Load(object sender, EventArgs e)
         {
+            if (Variable.langue == 0)
+            {
+                label1.Text = langage.CreerTournoiTitreFR;
+                label3.Text = langage.CreerTournoiNomFR;
+                label4.Text = langage.CreerTournoiTypeFR;
+                button1.Text = langage.UniBoutonFermerFR;
+                bt_confirmOrganisation.Text = langage.UniConfirmerFR;
+            }
+            if (Variable.langue == 1)
+            {
+                label1.Text = langage.CreerTournoiTitreEN;
+                label3.Text = langage.CreerTournoiNomEN;
+                label4.Text = langage.CreerTournoiTypeEN;
+                button1.Text = langage.UniBoutonFermerEN;
+                bt_confirmOrganisation.Text = langage.UniConfirmerEN;
+            }
+
             label1.Parent = pictureBox1;
             label3.Parent = pictureBox1;
             label4.Parent = pictureBox1;

@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.bt_createAccount = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,6 +96,7 @@
             this.bt_createAccount.TabIndex = 10;
             this.bt_createAccount.Text = "Confirmer";
             this.bt_createAccount.UseVisualStyleBackColor = true;
+            this.bt_createAccount.Click += new System.EventHandler(this.bt_createAccount_Click);
             // 
             // pictureBox1
             // 
@@ -103,6 +106,12 @@
             this.pictureBox1.Size = new System.Drawing.Size(493, 188);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // PageRéglage
             // 
@@ -117,7 +126,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "PageRéglage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PageRéglage";
+            this.Text = "Réglages";
             this.Load += new System.EventHandler(this.PageRéglage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -133,5 +142,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button bt_createAccount;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

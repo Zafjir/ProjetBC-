@@ -19,6 +19,23 @@ namespace ProjetBuseyneLaboProg
 
         private void PageAccueil_VoirTournoi_Load(object sender, EventArgs e)
         {
+            if (Variable.langue == 0)
+            {
+                label1.Text = langage.VoirTournoiTitreFR;
+                label2.Text = langage.VoirTournoiNomTFR;
+                label3.Text = langage.VoirTournoiTypeTFR;
+                label5.Text = langage.VoirTournoiListeFR;
+                button3.Text = langage.UniBoutonFermerFR;
+            }
+            if (Variable.langue == 1)
+            {
+                label1.Text = langage.VoirTournoiTitreEN;
+                label2.Text = langage.VoirTournoiNomTEN;
+                label3.Text = langage.VoirTournoiTypeTEN;
+                label5.Text = langage.VoirTournoiListeEN;
+                button3.Text = langage.UniBoutonFermerEN;
+            }
+
             label1.Parent = pictureBox1;
             label2.Parent = pictureBox1;
             label3.Parent = pictureBox1;
@@ -101,23 +118,40 @@ namespace ProjetBuseyneLaboProg
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string sqlstr, enr1, enr2, enr3;
-            Variable.listing++;
+            
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
             try
             {
+                string sqlstr, enr1, enr2, enr3;
                 Variable.conn.Open();
                 if (Variable.conn.State == ConnectionState.Open)
                 {
-                    sqlstr = "select * from Tournoi";
+                    sqlstr = "select * from Tournoi where NomTournoi ='" + listBox1.SelectedItem.ToString() + "'";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;
                     Variable.dtrd = Variable.cmd.ExecuteReader();
                     while (Variable.dtrd.Read())
                     {
-                        enr1 = Variable.dtrd["N°"].ToString();
-                        Variable.nbreDeTournoi = enr1;
+                        enr1 = Variable.dtrd["NomTournoi"].ToString();
+                        enr2 = Variable.dtrd["Type"].ToString();
+                        enr3 = Variable.dtrd["Calendrier"].ToString();
+                        lb_NomTournoi.Text = enr1;
+                        lb_TypeTournoi.Text = enr2;
+                        lb_Date.Text = enr3;
                     }
                     if (Variable.dtrd == null)
                     {
@@ -131,100 +165,6 @@ namespace ProjetBuseyneLaboProg
                 }
             }
             catch (Exception ex) { }
-
-
-            if (Variable.listing > Convert.ToInt32(Variable.nbreDeTournoi))
-            {
-                MessageBox.Show("Impossible de monter de nouveau dans la liste de tournois, il n'existe pas plus de tournois.");
-                Variable.listing--;
-            }
-            else
-            {
-                try
-                {
-                    Variable.conn.Open();
-                    if (Variable.conn.State == ConnectionState.Open)
-                    {
-                        sqlstr = "select * from Tournoi where N°=" + Variable.listing + "";
-                        Variable.cmd.CommandType = CommandType.Text;
-                        Variable.cmd.CommandText = sqlstr;
-                        Variable.cmd.Connection = Variable.conn;
-                        Variable.dtrd = Variable.cmd.ExecuteReader();
-                        while (Variable.dtrd.Read())
-                        {
-                            enr1 = Variable.dtrd["NomTournoi"].ToString();
-                            enr2 = Variable.dtrd["Type"].ToString();
-                            enr3 = Variable.dtrd["Calendrier"].ToString();
-                            lb_NomTournoi.Text = enr1;
-                            lb_TypeTournoi.Text = enr2;
-                            lb_Date.Text = enr3;
-                        }
-                        if (Variable.dtrd == null)
-                        {
-                            Variable.dtrd.Close();
-                        }
-
-                        if (Variable.conn.State == ConnectionState.Open)
-                        {
-                            Variable.conn.Close();
-                        }
-                    }
-                }
-                catch (Exception ex) { }
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string sqlstr, enr1, enr2, enr3;
-            Variable.listing--;
-            if (Variable.listing < 4)
-            {
-                MessageBox.Show("Impossible de descendre de nouveau dans la liste de tournois.");
-                Variable.listing++;
-            }
-
-            else
-            {
-                try
-                {
-                    Variable.conn.Open();
-                    if (Variable.conn.State == ConnectionState.Open)
-                    {
-                        sqlstr = "select * from Tournoi where N°=" + Variable.listing + "";
-                        Variable.cmd.CommandType = CommandType.Text;
-                        Variable.cmd.CommandText = sqlstr;
-                        Variable.cmd.Connection = Variable.conn;
-                        Variable.dtrd = Variable.cmd.ExecuteReader();
-                        while (Variable.dtrd.Read())
-                        {
-                            enr1 = Variable.dtrd["NomTournoi"].ToString();
-                            enr2 = Variable.dtrd["Type"].ToString();
-                            enr3 = Variable.dtrd["Calendrier"].ToString();
-
-                            if (Variable.dtrd == null)
-                            {
-                                Variable.dtrd.Close();
-                            }
-
-                            if (Variable.conn.State == ConnectionState.Open)
-                            {
-                                Variable.conn.Close();
-                            }
-
-                            lb_NomTournoi.Text = enr1;
-                            lb_TypeTournoi.Text = enr2;
-                            lb_Date.Text = enr3;
-                        }
-                    }
-                }
-                catch (Exception ex) { }
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

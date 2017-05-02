@@ -186,7 +186,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "PageAccueil_CréerOrganisation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PageAccueil_CréerOrganisation";
+            this.Text = "Créer une organisation";
             this.Load += new System.EventHandler(this.PageAccueil_CréerOrganisation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

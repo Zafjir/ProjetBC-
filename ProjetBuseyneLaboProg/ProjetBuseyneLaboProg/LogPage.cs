@@ -12,7 +12,8 @@ using System.Data.OleDb;
 namespace ProjetBuseyneLaboProg
 {
     public partial class LogPage : Form
-    { 
+    {
+        static LogPage pg = new LogPage();
         public LogPage()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace ProjetBuseyneLaboProg
             Variable.cmd = new OleDbCommand();
 
             Console.Write("Load : " + Variable.conn.ConnectionString.ToString() + "\n");
-
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -39,8 +40,9 @@ namespace ProjetBuseyneLaboProg
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        { 
             this.Close();
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -166,6 +168,28 @@ namespace ProjetBuseyneLaboProg
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Variable.langue == 0)
+            {
+                label1.Text = langage.LogPageTitreFR;
+                label3.Text = langage.LogPageUserFR;
+                label4.Text = langage.LogPagePasswordFR;
+                bt_createAccount.Text = langage.LogPageSignUpFR;
+                bt_login.Text = langage.LogPageSeConnecterFR;
+                button1.Text = langage.UniBoutonFermerFR;
+            }
+            if (Variable.langue == 1)
+            {
+                label1.Text = langage.LogPageTitreEN;
+                label3.Text = langage.LogPageUserEN;
+                label4.Text = langage.LogPagePasswordEN;
+                bt_createAccount.Text = langage.LogPageSignUpEN;
+                bt_login.Text = langage.LogPageSeConnecterEN;
+                button1.Text = langage.UniBoutonFermerEN;
+            }
         }
     }
 }

@@ -161,7 +161,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "PageAccueil_CréerTournoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PageAccueil_CréerTournoi";
+            this.Text = "Créer un tournoi";
             this.Load += new System.EventHandler(this.PageAccueil_CréerTournoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

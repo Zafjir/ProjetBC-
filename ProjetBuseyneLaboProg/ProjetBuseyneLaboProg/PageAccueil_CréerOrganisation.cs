@@ -48,11 +48,31 @@ namespace ProjetBuseyneLaboProg
 
         private void PageAccueil_CréerOrganisation_Load(object sender, EventArgs e)
         {
+            if (Variable.langue == 0)
+            {
+                label1.Text = langage.CreerOrgaTitreFR;
+                label3.Text = langage.CreerOrgaNomFR;
+                label5.Text = langage.CreerOrgaNomRespFR;
+                bt_confirmOrganisation.Text = langage.UniConfirmerFR;
+                button1.Text = langage.UniBoutonFermerFR;
+            }
+            if (Variable.langue == 1)
+            {
+                label1.Text = langage.CreerOrgaTitreEN;
+                label3.Text = langage.CreerOrgaNomEN;
+                label5.Text = langage.CreerOrgaNomRespEN;
+                bt_confirmOrganisation.Text = langage.UniConfirmerEN;
+                button1.Text = langage.UniBoutonFermerEN;
+            }
             label1.Parent = pictureBox1;
             label2.Parent = pictureBox1;
             label3.Parent = pictureBox1;
             label4.Parent = pictureBox1;
             label5.Parent = pictureBox1;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
         }
     }
 }

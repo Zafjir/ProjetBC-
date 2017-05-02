@@ -20,6 +20,29 @@ namespace ProjetBuseyneLaboProg
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            if (Variable.langue == 0)
+            {
+                label1.Text = langage.CreerCompteTitreFR;
+                label3.Text = langage.CreerCompteUserNameFR;
+                label4.Text = langage.CreerCompteMDPFR;
+                label5.Text = langage.CreerCompteMDPAFR;
+                bt_back.Text = langage.CreerCompteBTRetourFR;
+                bt_logConfirm.Text = langage.UniConfirmerFR;
+            }
+            if (Variable.langue == 1)
+            {
+                label1.Text = langage.CreerCompteTitreEN;
+                label3.Text = langage.CreerCompteUserNameEN;
+                label4.Text = langage.CreerCompteMDPEN;
+                label5.Text = langage.CreerCompteMDPAEN;
+                bt_back.Text = langage.CreerCompteBTRetourEN;
+                bt_logConfirm.Text = langage.UniConfirmerEN;
+            }
+
+            label1.Parent = pictureBox1;
+            label3.Parent = pictureBox1; 
+            label4.Parent = pictureBox1;
+            label5.Parent = pictureBox1;
             tb_passwordNewAccount.PasswordChar = '*';
             tb_passwordNewAccount.MaxLength = 14;
             tb_passwordNewAccountAgain.PasswordChar = '*';
@@ -28,23 +51,32 @@ namespace ProjetBuseyneLaboProg
 
         private void bt_logConfirm_Click(object sender, EventArgs e)
         {
-
-            int nbm;
-
-            if (tb_passwordNewAccount.Text == tb_passwordNewAccountAgain.Text)
+            if (tb_passwordNewAccount.Text == "" && tb_UsernameNewAccount.Text == "")
             {
-                if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }                }
+                MessageBox.Show("Manque d'informations");
+            }
+
+            else
+            {
+                int nbm;
+
+                if (tb_passwordNewAccount.Text == tb_passwordNewAccountAgain.Text)
+                {
+                    if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
+                }
                 Variable.cmd.CommandText = "insert into LogUtilisateur(UsName,Pwd) values('" + tb_UsernameNewAccount.Text + "','" + tb_passwordNewAccount.Text + "')";
                 Variable.cmd.Connection = Variable.conn;
-            try
-            { 
-                nbm = Variable.cmd.ExecuteNonQuery();
-            }catch (Exception ex)
-                {}
-               
-            Variable.conn.Close();
-            MessageBox.Show("Compte créé.");
-            this.Close();
+                try
+                {
+                    nbm = Variable.cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                { }
+
+                Variable.conn.Close();
+                MessageBox.Show("Compte créé.");
+                this.Close();
+            }
         }
 
         private void bt_back_Click(object sender, EventArgs e)
