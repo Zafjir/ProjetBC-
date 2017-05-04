@@ -183,6 +183,10 @@ namespace ProjetBuseyneLaboProg
             { }
             Variable.conn.Close();
             textBox2.Clear();
+            if (listBox2.Items.Count == listBox3.Items.Count)
+            {
+                button1.Enabled = false;
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -224,6 +228,11 @@ namespace ProjetBuseyneLaboProg
         {
             Archives_Listing Archives_Listing = new Archives_Listing();
             Archives_Listing.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }

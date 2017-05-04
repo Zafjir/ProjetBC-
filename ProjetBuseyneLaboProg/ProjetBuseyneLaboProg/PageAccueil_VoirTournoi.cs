@@ -41,6 +41,8 @@ namespace ProjetBuseyneLaboProg
             label3.Parent = pictureBox1;
             label4.Parent = pictureBox1;
             label5.Parent = pictureBox1;
+            label6.Parent = pictureBox1;
+            label7.Parent = pictureBox1;
             lb_Date.Parent = pictureBox1;
             lb_NomTournoi.Parent = pictureBox1;
             lb_TypeTournoi.Parent = pictureBox1;
@@ -68,6 +70,7 @@ namespace ProjetBuseyneLaboProg
                         enr1 = Variable.dtrd["NomTournoi"].ToString();
                         enr2 = Variable.dtrd["Type"].ToString();
                         enr3 = Variable.dtrd["Calendrier"].ToString();
+                        enr4 = Variable.dtrd["OrgaResponsable"].ToString();
 
                         if (Variable.dtrd == null)
                         {
@@ -82,6 +85,7 @@ namespace ProjetBuseyneLaboProg
                         lb_NomTournoi.Text = enr1;
                         lb_TypeTournoi.Text = enr2;
                         lb_Date.Text = enr3;
+                        label7.Text = enr4;
                     }
                 }
             }catch (Exception ex) { }
@@ -135,7 +139,7 @@ namespace ProjetBuseyneLaboProg
         {
             try
             {
-                string sqlstr, enr1, enr2, enr3;
+                string sqlstr, enr1, enr2, enr3, enr4;
                 Variable.conn.Open();
                 if (Variable.conn.State == ConnectionState.Open)
                 {
@@ -149,9 +153,11 @@ namespace ProjetBuseyneLaboProg
                         enr1 = Variable.dtrd["NomTournoi"].ToString();
                         enr2 = Variable.dtrd["Type"].ToString();
                         enr3 = Variable.dtrd["Calendrier"].ToString();
+                        enr4 = Variable.dtrd["OrgaResponsable"].ToString();
                         lb_NomTournoi.Text = enr1;
                         lb_TypeTournoi.Text = enr2;
                         lb_Date.Text = enr3;
+                        label7.Text = enr4;
                     }
                     if (Variable.dtrd == null)
                     {

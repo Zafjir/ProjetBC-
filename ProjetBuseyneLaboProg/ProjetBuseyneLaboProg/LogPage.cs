@@ -66,6 +66,8 @@ namespace ProjetBuseyneLaboProg
             string log;
             string sqlstr, enr;
 
+
+
             try
             {
                 Variable.conn.Open();
@@ -89,6 +91,7 @@ namespace ProjetBuseyneLaboProg
                             PageAdmin form3 = new PageAdmin();
                             form3.ShowDialog();
                         }
+
                         if (Variable.dtrd == null)
                         {
                             Variable.dtrd.Close();
@@ -127,6 +130,10 @@ namespace ProjetBuseyneLaboProg
                                         pageAccueil.ShowDialog();
                                     }
                                 }
+                                if (log != enr)
+                                {
+                                    MessageBox.Show("Nom d'utilisateur ou mot de passe incorrect.", "Erreur de connexion");
+                                }
                             }
                         }
                         if (Variable.dtrd != null)
@@ -141,7 +148,7 @@ namespace ProjetBuseyneLaboProg
                     }
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) {}
         }
 
         private void cb_languageSelect_SelectedIndexChanged(object sender, EventArgs e)

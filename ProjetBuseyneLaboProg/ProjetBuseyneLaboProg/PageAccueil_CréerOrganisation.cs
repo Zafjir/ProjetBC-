@@ -24,26 +24,32 @@ namespace ProjetBuseyneLaboProg
 
         private void bt_createAccount_Click(object sender, EventArgs e)
         {
-            int nbm;
-
-            if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
-
-            Variable.cmd.CommandText = "insert into Organisation(Nomorganisation,Description,Nomresponsable,Email) values('" + tb_nomOrganisation.Text + "','" + tb_description.Text + "','" + tb_nomResponsable.Text + "','" + tb_email.Text + "')";
-            Variable.cmd.Connection = Variable.conn;
-            try
+            if (tb_nomOrganisation.Text == "" || tb_nomResponsable.Text == "" || tb_email.Text == "" || tb_description.Text == "")
             {
-                nbm = Variable.cmd.ExecuteNonQuery();
+                MessageBox.Show("Manque d'informations", "Erreur");
             }
-            catch (Exception ex)
-            { }
+            else {
+                int nbm;
 
-            Variable.conn.Close();
-            MessageBox.Show("Organisation créée.");
-            tb_nomOrganisation.Clear();
-            tb_nomResponsable.Clear();
-            tb_email.Clear();
-            tb_description.Clear();
-            this.Close();
+                if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
+
+                Variable.cmd.CommandText = "insert into Organisation(Nomorganisation,Description,Nomresponsable,Email) values('" + tb_nomOrganisation.Text + "','" + tb_description.Text + "','" + tb_nomResponsable.Text + "','" + tb_email.Text + "')";
+                Variable.cmd.Connection = Variable.conn;
+                try
+                {
+                    nbm = Variable.cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                { }
+
+                Variable.conn.Close();
+                MessageBox.Show("Organisation créée.");
+                tb_nomOrganisation.Clear();
+                tb_nomResponsable.Clear();
+                tb_email.Clear();
+                tb_description.Clear();
+                this.Close();
+            }
         }
 
         private void PageAccueil_CréerOrganisation_Load(object sender, EventArgs e)

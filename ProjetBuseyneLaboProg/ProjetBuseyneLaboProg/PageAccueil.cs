@@ -147,5 +147,10 @@ namespace ProjetBuseyneLaboProg
                 button1.Text = langage.UniBoutonFermerEN;
             }
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Créer une organisation -> Crée une organisation\n_________________________________________\n\nCréer un tournoi -> Crée un tournoi\n_________________________________________\n\nVoir les tournois -> Voir les tournois en cours ainsi que l'organisation responsable\n_________________________________________\n\nTop des jeux -> Affiche le top des jeux-vidéos\n_________________________________________\n\nGérer mon tournoi -> Permet d'ajouter des participants à un tournoi\n_________________________________________\n\nClore un tournoi -> Permet de clore un tournoi en attribuant des points aux équipes d'un tournoi en particulier","Aide");
+        }
     }
 }

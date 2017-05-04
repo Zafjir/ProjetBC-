@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageAccueil_TopDesJeux));
             this.button1 = new System.Windows.Forms.Button();
             this.lb_Top1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,15 +40,17 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.axShockwaveFlash1 = new AxShockwaveFlashObjects.AxShockwaveFlash();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axShockwaveFlash1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 362);
+            this.button1.Location = new System.Drawing.Point(22, 637);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 44);
             this.button1.TabIndex = 3;
@@ -136,7 +139,7 @@
             this.lb_RésuméJeu.BackColor = System.Drawing.Color.Transparent;
             this.lb_RésuméJeu.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_RésuméJeu.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lb_RésuméJeu.Location = new System.Drawing.Point(260, 283);
+            this.lb_RésuméJeu.Location = new System.Drawing.Point(260, 252);
             this.lb_RésuméJeu.Name = "lb_RésuméJeu";
             this.lb_RésuméJeu.Size = new System.Drawing.Size(651, 123);
             this.lb_RésuméJeu.TabIndex = 34;
@@ -173,15 +176,25 @@
             this.pictureBox2.Image = global::ProjetBuseyneLaboProg.Properties.Resources.sgdfsdfg;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(924, 425);
+            this.pictureBox2.Size = new System.Drawing.Size(924, 695);
             this.pictureBox2.TabIndex = 33;
             this.pictureBox2.TabStop = false;
+            // 
+            // axShockwaveFlash1
+            // 
+            this.axShockwaveFlash1.Enabled = true;
+            this.axShockwaveFlash1.Location = new System.Drawing.Point(260, 378);
+            this.axShockwaveFlash1.Name = "axShockwaveFlash1";
+            this.axShockwaveFlash1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axShockwaveFlash1.OcxState")));
+            this.axShockwaveFlash1.Size = new System.Drawing.Size(537, 281);
+            this.axShockwaveFlash1.TabIndex = 36;
             // 
             // PageAccueil_TopDesJeux
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 423);
+            this.ClientSize = new System.Drawing.Size(923, 693);
+            this.Controls.Add(this.axShockwaveFlash1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lb_RésuméJeu);
             this.Controls.Add(this.lb_Description);
@@ -198,6 +211,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axShockwaveFlash1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +230,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lb_RésuméJeu;
         private System.Windows.Forms.GroupBox groupBox1;
+        private AxShockwaveFlashObjects.AxShockwaveFlash axShockwaveFlash1;
     }
 }

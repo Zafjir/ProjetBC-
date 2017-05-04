@@ -197,41 +197,46 @@ namespace ProjetBuseyneLaboProg
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int nbm;
-
-            if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
-
-            Variable.cmd.CommandText = "insert into Participants(Nom,Prénom,Rang,Flag,Equipe) values('" + tb_Nom.Text + "','" + tb_Prénom.Text + "','" + tb_Rang.Text + "'," + Convert.ToInt32(Variable.RangeID) + ",'" + tb_Equipe.Text + "')";
-            Variable.cmd.Connection = Variable.conn;
-            try
+            if (tb_Equipe.Text == "" || tb_Nom.Text == "" || tb_Prénom.Text == "" || tb_Rang.Text == "")
             {
-                nbm = Variable.cmd.ExecuteNonQuery();
+                MessageBox.Show("Manque d'informations", "Erreur");
             }
-            catch (Exception ex)
-            {}
-            tb_Equipe.Clear();
-            tb_Nom.Clear();
-            tb_Prénom.Clear();
-            tb_Rang.Clear();
+            else{
+                int nbm;
 
-            Variable.conn.Close();
+                if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
 
-            try
-            {
-                listBox2.Items.Clear();
-                string enr1, sqlstr;
-                Variable.conn.Open();
-                if (Variable.conn.State == ConnectionState.Open)
+                Variable.cmd.CommandText = "insert into Participants(Nom,Prénom,Rang,Flag,Equipe) values('" + tb_Nom.Text + "','" + tb_Prénom.Text + "','" + tb_Rang.Text + "'," + Convert.ToInt32(Variable.RangeID) + ",'" + tb_Equipe.Text + "')";
+                Variable.cmd.Connection = Variable.conn;
+                try
                 {
-                    sqlstr = "select* from Participants where Flag = " + Convert.ToInt32(Variable.RangeID);
-                    Variable.cmd.CommandType = CommandType.Text;
-                    Variable.cmd.CommandText = sqlstr;
-                    Variable.cmd.Connection = Variable.conn;
-                    Variable.dtrd = Variable.cmd.ExecuteReader();
-                    while (Variable.dtrd.Read())
+                    nbm = Variable.cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                { }
+                tb_Equipe.Clear();
+                tb_Nom.Clear();
+                tb_Prénom.Clear();
+                tb_Rang.Clear();
+
+                Variable.conn.Close();
+
+                try
+                {
+                    listBox2.Items.Clear();
+                    string enr1, sqlstr;
+                    Variable.conn.Open();
+                    if (Variable.conn.State == ConnectionState.Open)
                     {
-                        listBox2.Items.Add(Variable.dtrd["Prénom"].ToString());                        
-                    }
+                        sqlstr = "select* from Participants where Flag = " + Convert.ToInt32(Variable.RangeID);
+                        Variable.cmd.CommandType = CommandType.Text;
+                        Variable.cmd.CommandText = sqlstr;
+                        Variable.cmd.Connection = Variable.conn;
+                        Variable.dtrd = Variable.cmd.ExecuteReader();
+                        while (Variable.dtrd.Read())
+                        {
+                            listBox2.Items.Add(Variable.dtrd["Prénom"].ToString());
+                        }
 
                         if (Variable.dtrd == null)
                         {
@@ -242,9 +247,10 @@ namespace ProjetBuseyneLaboProg
                         {
                             Variable.conn.Close();
                         }
+                    }
                 }
+                catch (Exception ex) { }
             }
-            catch (Exception ex) {}
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

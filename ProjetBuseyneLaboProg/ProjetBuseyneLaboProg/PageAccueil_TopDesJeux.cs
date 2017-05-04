@@ -98,6 +98,7 @@ namespace ProjetBuseyneLaboProg
             lb_Top1.Font = new Font("MS Reference Sans Serif", 11, FontStyle.Bold);
             lb_Top2.Font = new Font("MS Reference Sans Serif", 11, FontStyle.Regular);
             lb_Top3.Font = new Font("MS Reference Sans Serif", 11, FontStyle.Regular);
+            axShockwaveFlash1.Movie = "https://www.youtube.com/v/tEnsqpThaFg";
             string sqlstr, enr1, enr2, enr3, enr4;
             try
             {
@@ -139,6 +140,7 @@ namespace ProjetBuseyneLaboProg
             lb_Top1.Font = new Font("MS Reference Sans Serif", 11, FontStyle.Regular);
             lb_Top2.Font = new Font("MS Reference Sans Serif", 11, FontStyle.Bold);
             lb_Top3.Font = new Font("MS Reference Sans Serif", 11, FontStyle.Regular);
+            axShockwaveFlash1.Movie = "https://www.youtube.com/v/edYCtaNueQY";
             string sqlstr, enr1, enr2, enr3, enr4;
             try
             {
@@ -180,6 +182,7 @@ namespace ProjetBuseyneLaboProg
             lb_Top1.Font = new Font("MS Reference Sans Serif", 11, FontStyle.Regular);
             lb_Top2.Font = new Font("MS Reference Sans Serif", 11, FontStyle.Regular);
             lb_Top3.Font = new Font("MS Reference Sans Serif", 11, FontStyle.Bold);
+            axShockwaveFlash1.Movie = "https://www.youtube.com/v/SCq4WmfRPyg";
             string sqlstr, enr1, enr2, enr3, enr4;
             try
             {
