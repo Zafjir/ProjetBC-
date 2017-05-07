@@ -44,35 +44,6 @@ namespace ProjetBuseyneLaboProg
             lb_Pseudo.Parent = pictureBox1;
             lb_Pseudo.BackColor = Color.Transparent;
             lb_Pseudo.ForeColor = Color.White;
-
-            string sqlstr;
-            try
-            {
-                Variable.conn.Open();
-                if (Variable.conn.State == ConnectionState.Open)
-                {
-                    sqlstr = "select * from Tournoi order by N° desc";
-                    Variable.cmd.CommandType = CommandType.Text;
-                    Variable.cmd.CommandText = sqlstr;
-                    Variable.cmd.Connection = Variable.conn;
-                    Variable.dtrd = Variable.cmd.ExecuteReader();
-                    while (Variable.dtrd.Read())
-                    {
-                        Variable.IDPremierTournoi = Variable.dtrd["N°"].ToString();
-                    }
-                    if (Variable.dtrd == null)
-                    {
-                        Variable.dtrd.Close();
-                    }
-
-                    if (Variable.conn.State == ConnectionState.Open)
-                    {
-                        Variable.conn.Close();
-                    }
-                    Variable.listing = Convert.ToInt32(Variable.IDPremierTournoi);
-                }
-            }
-            catch (Exception ex) {}
         }
 
         private void label1_Click(object sender, EventArgs e)

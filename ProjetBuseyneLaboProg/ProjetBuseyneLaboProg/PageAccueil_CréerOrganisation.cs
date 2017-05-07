@@ -29,20 +29,23 @@ namespace ProjetBuseyneLaboProg
                 MessageBox.Show("Manque d'informations", "Erreur");
             }
             else {
-                int nbm;
+                /* int nbm;
 
-                if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
+                 if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
 
-                Variable.cmd.CommandText = "insert into Organisation(Nomorganisation,Description,Nomresponsable,Email) values('" + tb_nomOrganisation.Text + "','" + tb_description.Text + "','" + tb_nomResponsable.Text + "','" + tb_email.Text + "')";
-                Variable.cmd.Connection = Variable.conn;
-                try
-                {
-                    nbm = Variable.cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                { }
+                 Variable.cmd.CommandText = "insert into Organisation(Nomorganisation,Description,Nomresponsable,Email) values('" + tb_nomOrganisation.Text + "','" + tb_description.Text + "','" + tb_nomResponsable.Text + "','" + tb_email.Text + "')";
+                 Variable.cmd.Connection = Variable.conn;
+                 try
+                 {
+                     nbm = Variable.cmd.ExecuteNonQuery();
+                 }
+                 catch (Exception ex)
+                 { }
 
-                Variable.conn.Close();
+                 Variable.conn.Close();
+                 */
+                DBAccess qry = new DBAccess();
+                qry.qry("insert into Organisation(Nomorganisation,Description,Nomresponsable,Email) values('" + tb_nomOrganisation.Text + "','" + tb_description.Text + "','" + tb_nomResponsable.Text + "','" + tb_email.Text + "')");
                 MessageBox.Show("Organisation créée.");
                 tb_nomOrganisation.Clear();
                 tb_nomResponsable.Clear();

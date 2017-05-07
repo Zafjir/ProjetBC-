@@ -21,7 +21,7 @@ namespace ProjetBuseyneLaboProg
             Variable.cmd = new OleDbCommand();
 
             Console.Write("Load : " + Variable.conn.ConnectionString.ToString() + "\n");
-           
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -40,9 +40,9 @@ namespace ProjetBuseyneLaboProg
         }
 
         private void button1_Click(object sender, EventArgs e)
-        { 
+        {
             this.Close();
-           
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace ProjetBuseyneLaboProg
         }
 
         private void button_ok_Click(object sender, EventArgs e)
-        {}
+        { }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -64,92 +64,143 @@ namespace ProjetBuseyneLaboProg
         private void bt_login_Click(object sender, EventArgs e)
         {
             string log;
-            string sqlstr, enr;
-
-
-
-            try
+            DBAccess db = new DBAccess();
+            DataTable ds = db.qry("select * from logAdmin");
+            bool authentification = false;
+            String auth = "";
+            Variable.username = textBox1.Text;
+            Variable.password = tb_password.Text;
+            log = Variable.username + Variable.password;
+            foreach (DataRow row in ds.Rows)
             {
-                Variable.conn.Open();
-                if (Variable.conn.State == ConnectionState.Open)
+                foreach (DataColumn column in ds.Columns)
                 {
-                    Variable.username = textBox1.Text;
-                    Variable.password = tb_password.Text;
-                    sqlstr = "select * from LogAdmin";
-                    Variable.cmd.CommandType = CommandType.Text;
-                    Variable.cmd.CommandText = sqlstr;
-                    Variable.cmd.Connection = Variable.conn;
-                    Variable.dtrd = Variable.cmd.ExecuteReader();
-                    while (Variable.dtrd.Read())
+                    //Console.WriteLine(row[column]);
+                    auth = auth + row[column].ToString();
+                }
+                Console.WriteLine(auth);
+                Console.WriteLine(log);
+                if (auth == log)
+                {
+                    authentification = true;
+                }
+                auth = "";
+            }
+            Console.WriteLine(auth);
+            if (authentification)
+            {
+                PageAdmin form3 = new PageAdmin();
+                form3.ShowDialog();
+            }
+            else
+            {
+                ds = db.qry("select * from LogUtilisateur");
+                foreach (DataRow row in ds.Rows)
+                {
+                    foreach (DataColumn column in ds.Columns)
                     {
-                        enr = Variable.dtrd["UsName"].ToString() + "" + Variable.dtrd["Pwd"].ToString();
-                        log = Variable.username + Variable.password;
-                        //MessageBox.Show("testAdmin");
-                        if (log == enr)
-                        {
-                            Variable.conn.Close();
-                            PageAdmin form3 = new PageAdmin();
-                            form3.ShowDialog();
-                        }
+                       // Console.WriteLine(row[column]);
+                        auth = auth + row[column].ToString();
+                    }
+                    Console.WriteLine(auth);
+                    Console.WriteLine(log);
+                    if (auth == log)
+                    {
+                        authentification = true;
+                    }
+                    auth = "";
+                }
+            }
+            if (authentification)
+            { 
+                PageAccueil pageAccueil = new PageAccueil();
+                pageAccueil.ShowDialog();
+            }
+        }
+        /*
 
-                        if (Variable.dtrd == null)
-                        {
-                            Variable.dtrd.Close();
-                        }
+        try
+        {
+            Variable.conn.Open();
+            if (Variable.conn.State == ConnectionState.Open)
+            {
+                Variable.username = textBox1.Text;
+                Variable.password = tb_password.Text;
+                sqlstr = "select * from LogAdmin";
+                Variable.cmd.CommandType = CommandType.Text;
+                Variable.cmd.CommandText = sqlstr;
+                Variable.cmd.Connection = Variable.conn;
+                Variable.dtrd = Variable.cmd.ExecuteReader();
+                while (Variable.dtrd.Read())
+                {
+                    enr = Variable.dtrd["UsName"].ToString() + "" + Variable.dtrd["Pwd"].ToString();
+                    log = Variable.username + Variable.password;
+                    //MessageBox.Show("authAdmin");
+                    if (log == enr)
+                    {
+                        Variable.conn.Close();
+                        PageAdmin form3 = new PageAdmin();
+                        form3.ShowDialog();
+                    }
 
+                    if (Variable.dtrd == null)
+                    {
+                        Variable.dtrd.Close();
+                    }
+
+                    if (Variable.conn.State == ConnectionState.Open)
+                    {
+                        Variable.conn.Close();
+                    }
+
+                    Variable.conn.Open();
+                    if (log != enr)
+                    {
+                        // MessageBox.Show("Arrivée dans le auth utilisateur");
                         if (Variable.conn.State == ConnectionState.Open)
                         {
-                            Variable.conn.Close();
-                        }
-
-                        Variable.conn.Open();
-                        if (log != enr)
-                        {
-                            // MessageBox.Show("Arrivée dans le test utilisateur");
-                            if (Variable.conn.State == ConnectionState.Open)
+                            // MessageBox.Show("Arrivée dans le if");
+                            Variable.username = textBox1.Text;
+                            Variable.password = tb_password.Text;
+                            sqlstr = "select * from LogUtilisateur";
+                            Variable.cmd.CommandType = CommandType.Text;
+                            Variable.cmd.CommandText = sqlstr;
+                            Variable.cmd.Connection = Variable.conn;
+                            Variable.dtrd = Variable.cmd.ExecuteReader();
+                            //MessageBox.Show("Enovoie de la commande");
+                            while (Variable.dtrd.Read())
                             {
-                                // MessageBox.Show("Arrivée dans le if");
-                                Variable.username = textBox1.Text;
-                                Variable.password = tb_password.Text;
-                                sqlstr = "select * from LogUtilisateur";
-                                Variable.cmd.CommandType = CommandType.Text;
-                                Variable.cmd.CommandText = sqlstr;
-                                Variable.cmd.Connection = Variable.conn;
-                                Variable.dtrd = Variable.cmd.ExecuteReader();
-                                //MessageBox.Show("Enovoie de la commande");
-                                while (Variable.dtrd.Read())
+                                // MessageBox.Show("auth User");
+                                enr = Variable.dtrd["UsName"].ToString() + "" + Variable.dtrd["Pwd"].ToString();
+                                log = Variable.username + Variable.password;
+                                if (log == enr)
                                 {
-                                    // MessageBox.Show("Test User");
-                                    enr = Variable.dtrd["UsName"].ToString() + "" + Variable.dtrd["Pwd"].ToString();
-                                    log = Variable.username + Variable.password;
-                                    if (log == enr)
-                                    {
-                                        Variable.pseudoConnection = Variable.username;
-                                        Variable.conn.Close();
-                                        PageAccueil pageAccueil = new PageAccueil();
-                                        pageAccueil.ShowDialog();
-                                    }
-                                }
-                                if (log != enr)
-                                {
-                                    MessageBox.Show("Nom d'utilisateur ou mot de passe incorrect.", "Erreur de connexion");
+                                    Variable.pseudoConnection = Variable.username;
+                                    Variable.conn.Close();
+                                    PageAccueil pageAccueil = new PageAccueil();
+                                    pageAccueil.ShowDialog();
                                 }
                             }
+                            if (log != enr)
+                            {
+                                MessageBox.Show("Nom d'utilisateur ou mot de passe incorrect.", "Erreur de connexion");
+                            }
                         }
-                        if (Variable.dtrd != null)
-                        {
-                            Variable.dtrd.Close();
-                        }
+                    }
+                    if (Variable.dtrd != null)
+                    {
+                        Variable.dtrd.Close();
+                    }
 
-                        if (Variable.conn.State == ConnectionState.Open)
-                        {
-                            Variable.conn.Close();
-                        }
+                    if (Variable.conn.State == ConnectionState.Open)
+                    {
+                        Variable.conn.Close();
                     }
                 }
             }
-            catch (Exception ex) {}
         }
+        catch (Exception ex) {}
+         }*/
 
         private void cb_languageSelect_SelectedIndexChanged(object sender, EventArgs e)
         {

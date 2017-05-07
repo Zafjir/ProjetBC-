@@ -72,7 +72,6 @@ namespace ProjetBuseyneLaboProg
             label7.Parent = pictureBox1;
             label8.Parent = pictureBox1;
             label9.Parent = pictureBox1;
-
             string sqlstr;
             try
             {

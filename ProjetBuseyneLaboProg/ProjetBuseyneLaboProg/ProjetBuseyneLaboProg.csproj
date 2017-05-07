@@ -54,6 +54,7 @@
       <DependentUpon>Archives_Listing.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBaseConnections.cs" />
+    <Compile Include="DBAccess.cs" />
     <Compile Include="LogPage.cs">
       <SubType>Form</SubType>
     </Compile>

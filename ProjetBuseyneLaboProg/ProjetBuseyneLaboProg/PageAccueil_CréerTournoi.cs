@@ -29,6 +29,7 @@ namespace ProjetBuseyneLaboProg
                 MessageBox.Show("Manque d'informations", "Erreur");
             }
             else{
+                /*
                 int nbm;
 
                 if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
@@ -41,7 +42,9 @@ namespace ProjetBuseyneLaboProg
                 }
                 catch (Exception ex)
                 { }
-
+                */
+                DBAccess qry = new DBAccess();
+                qry.qry("insert into Tournoi(NomTournoi,Type,Calendrier,OrgaResponsable) values('" + tb_nomTournoi.Text + "','" + tb_typeTournoi.Text + "','" + cl_calendrierTournoi.SelectionEnd.Date.ToString() + "','" + label2.Text + "')");
                 Variable.conn.Close();
                 MessageBox.Show("Tournoi créé.");
                 tb_nomTournoi.Clear();
