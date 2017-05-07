@@ -72,8 +72,28 @@ namespace ProjetBuseyneLaboProg
             label7.Parent = pictureBox1;
             label8.Parent = pictureBox1;
             label9.Parent = pictureBox1;
-            string sqlstr;
-            try
+
+            string sqlstr="";
+            DBAccess db = new DBAccess();
+            DataTable ds = db.qry("select * from Tournoi");
+            // db.qry("select * from Tournoi");
+            int cpt = 0;
+            foreach (DataRow row in ds.Rows)
+            {
+                foreach (DataColumn column in ds.Columns)
+                {
+                    Console.WriteLine(row[column]);
+                    if (column.ColumnName == "NomTournoi")
+                    {
+                        sqlstr = row[column].ToString();
+                        listBox1.Items.Add(sqlstr);
+                        //if (cpt == 1) {  }
+                    }
+                   // cpt++;
+                }
+                sqlstr = "";
+            }
+            /* try
             {
                 Variable.conn.Open();
                 if (Variable.conn.State == ConnectionState.Open)
@@ -100,15 +120,54 @@ namespace ProjetBuseyneLaboProg
 
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { }*/
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             button1.Enabled = true;
             bt_RechercheJoueur.Enabled = true;
-            string sqlstr, enr1, enr2, enr3, enr4;
+            string sqlstr = "";
             listBox2.Items.Clear();
+            DBAccess db = new DBAccess();
+            DataTable ds = db.qry("select * from Tournoi where NomTournoi='" + textBox1.Text + "'");
+            int cpt = 0;
+           
+            foreach (DataRow row in ds.Rows)
+            {
+                foreach (DataColumn column in ds.Columns)
+                {
+                    Console.WriteLine(row[column]);
+                    if (column.ColumnName == "NomTournoi")
+                    {
+                        sqlstr = row[column].ToString();
+                        label14.Text = sqlstr;
+                        
+                    }
+                    if (column.ColumnName == "Type")
+                    {
+                        sqlstr = row[column].ToString();
+                        label13.Text = sqlstr;
+
+                    }
+                    if (column.ColumnName == "Calendrier")
+                    {
+                        sqlstr = row[column].ToString();
+                        label12.Text = sqlstr;
+
+                    }
+                    if (column.ColumnName == "N°")
+                    {
+                        sqlstr = row[column].ToString();
+                        Variable.RangeID = sqlstr;
+                    }
+                    sqlstr = row[column].ToString();
+                    MessageBox.Show("hello");
+                }
+                MessageBox.Show(sqlstr);
+                sqlstr = "";
+            }
+            /*
             try
             {
                 Variable.conn.Open();
@@ -142,8 +201,8 @@ namespace ProjetBuseyneLaboProg
                 }
             }
             catch (Exception ex) {}
+            */
 
-            
             try
             {
                 string sqlstr2, enr11, enr22, enr33, enr44;
@@ -309,6 +368,11 @@ namespace ProjetBuseyneLaboProg
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
