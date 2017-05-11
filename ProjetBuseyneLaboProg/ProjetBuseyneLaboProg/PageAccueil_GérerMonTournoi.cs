@@ -162,9 +162,7 @@ namespace ProjetBuseyneLaboProg
                         Variable.RangeID = sqlstr;
                     }
                     sqlstr = row[column].ToString();
-                    MessageBox.Show("hello");
                 }
-                MessageBox.Show(sqlstr);
                 sqlstr = "";
             }
             /*

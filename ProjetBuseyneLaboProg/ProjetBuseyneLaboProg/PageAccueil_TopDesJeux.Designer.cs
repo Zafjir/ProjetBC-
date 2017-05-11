@@ -186,7 +186,7 @@
             this.axShockwaveFlash1.Location = new System.Drawing.Point(260, 378);
             this.axShockwaveFlash1.Name = "axShockwaveFlash1";
             this.axShockwaveFlash1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axShockwaveFlash1.OcxState")));
-            this.axShockwaveFlash1.Size = new System.Drawing.Size(537, 281);
+            this.axShockwaveFlash1.Size = new System.Drawing.Size(651, 308);
             this.axShockwaveFlash1.TabIndex = 36;
             // 
             // PageAccueil_TopDesJeux

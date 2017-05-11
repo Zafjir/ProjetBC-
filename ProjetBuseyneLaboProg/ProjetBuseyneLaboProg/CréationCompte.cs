@@ -58,13 +58,21 @@ namespace ProjetBuseyneLaboProg
 
             else
             {
+                //Variable.motCrypte = "";
+                //Variable.motNonCrypte = "";
+                //Variable.motNonCrypte = tb_passwordNewAccount.Text;
+                string pass = tb_passwordNewAccount.Text;
+                Variable.motNonCrypte = pass.ToCharArray(0,pass.Length);
+
+                Cryptage.cryptage();
                 int nbm;
 
                 if (tb_passwordNewAccount.Text == tb_passwordNewAccountAgain.Text)
                 {
                     if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
                 }
-                Variable.cmd.CommandText = "insert into LogUtilisateur(UsName,Pwd) values('" + tb_UsernameNewAccount.Text + "','" + tb_passwordNewAccount.Text + "')";
+                string s = new string(Variable.motCrypte);
+                Variable.cmd.CommandText = "insert into LogUtilisateur(UsName,Pwd,Grade) values('" + tb_UsernameNewAccount.Text + "','" + s + "','utilisateur')";
                 Variable.cmd.Connection = Variable.conn;
                 try
                 {

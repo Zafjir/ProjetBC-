@@ -44,6 +44,14 @@ namespace ProjetBuseyneLaboProg
             lb_Pseudo.Parent = pictureBox1;
             lb_Pseudo.BackColor = Color.Transparent;
             lb_Pseudo.ForeColor = Color.White;
+
+            if (Variable.grade == 1)
+            {
+                button3.Enabled = false;
+                button8.Enabled = false;
+                button4.Enabled = false;
+                button6.Text = "Participer à un tournoi";
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)

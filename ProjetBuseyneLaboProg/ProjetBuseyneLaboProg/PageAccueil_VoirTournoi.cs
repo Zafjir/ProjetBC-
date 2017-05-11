@@ -60,7 +60,7 @@ namespace ProjetBuseyneLaboProg
                 Variable.conn.Open();
                 if (Variable.conn.State == ConnectionState.Open)
                 {
-                    sqlstr = "select * from Tournoi where N°="+Variable.listing+"";
+                    sqlstr = "select * from Tournoi";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;

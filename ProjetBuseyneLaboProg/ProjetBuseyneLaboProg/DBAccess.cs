@@ -33,7 +33,7 @@ namespace ProjetBuseyneLaboProg
             }
             catch (Exception e)
             {
-                Console.WriteLine("L'erreur suivante a été rencontrée :" + e.Message);
+                MessageBox.Show("L'erreur suivante a été rencontrée :" + e.ToString());
 
             }
             return ds;
