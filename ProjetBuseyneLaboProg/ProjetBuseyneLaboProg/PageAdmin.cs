@@ -34,11 +34,11 @@ namespace ProjetBuseyneLaboProg
             listBox2.Items.Clear();
             label1.Text = "User name";
             label2.Text = "Password";
-            label3.Text = " ";
-            label4.Text = " ";
+            label3.Text = "Grade";
+            label4.Text = "Nbre Co";
             string log;
             string sqlstr;
-            string enr1, enr2, enr3;
+            string enr1, enr2, enr3, enr4;
 
             try
             {
@@ -56,9 +56,11 @@ namespace ProjetBuseyneLaboProg
                         enr1 = Variable.dtrd["UsName"].ToString();
                         enr2 = Variable.dtrd["Pwd"].ToString();
                         enr3 = Variable.dtrd["Grade"].ToString();
+                        enr4 = Variable.dtrd["NbreCo"].ToString();
                         listBox1.Items.Add(enr1);
                         listBox2.Items.Add(enr2);
                         listBox3.Items.Add(enr3);
+                        listBox4.Items.Add(enr4);
                     }
                     if (Variable.dtrd != null)
                     {
@@ -207,13 +209,14 @@ namespace ProjetBuseyneLaboProg
             listBox1.Items.Clear();
             listBox2.Items.Clear();
             listBox3.Items.Clear();
+            listBox4.Items.Clear();
             label1.Text = "User name";
             label2.Text = "Password";
-            label3.Text = " ";
-            label4.Text = " ";
+            label3.Text = "Grade";
+            label4.Text = "Nbre Co";
             string log;
             string sqlstr;
-            string enr1, enr2, enr3;
+            string enr1, enr2, enr3, enr4;
 
             try
             {
@@ -231,9 +234,11 @@ namespace ProjetBuseyneLaboProg
                         enr1 = Variable.dtrd["UsName"].ToString();
                         enr2 = Variable.dtrd["Pwd"].ToString();
                         enr3 = Variable.dtrd["Grade"].ToString();
+                        enr4 = Variable.dtrd["NbreCo"].ToString();
                         listBox1.Items.Add(enr1);
                         listBox2.Items.Add(enr2);
                         listBox3.Items.Add(enr3);
+                        listBox4.Items.Add(enr4);
                     }
                     if (Variable.dtrd != null)
                     {

@@ -58,33 +58,33 @@ namespace ProjetBuseyneLaboProg
 
             else
             {
-                //Variable.motCrypte = "";
-                //Variable.motNonCrypte = "";
-                //Variable.motNonCrypte = tb_passwordNewAccount.Text;
-                string pass = tb_passwordNewAccount.Text;
-                Variable.motNonCrypte = pass.ToCharArray(0,pass.Length);
+                    //Variable.motCrypte = "";
+                    //Variable.motNonCrypte = "";
+                    //Variable.motNonCrypte = tb_passwordNewAccount.Text;
+                    string pass = tb_passwordNewAccount.Text;
+                    Variable.motNonCrypte = pass.ToCharArray(0, pass.Length);
 
-                Cryptage.cryptage();
-                int nbm;
+                    Cryptage.cryptage();
+                    int nbm;
 
-                if (tb_passwordNewAccount.Text == tb_passwordNewAccountAgain.Text)
-                {
-                    if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
+                    if (tb_passwordNewAccount.Text == tb_passwordNewAccountAgain.Text)
+                    {
+                        if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
+                    }
+                    string s = new string(Variable.motCrypte);
+                    Variable.cmd.CommandText = "insert into LogUtilisateur(UsName,Pwd,Grade,NbreCo) values('" + tb_UsernameNewAccount.Text + "','" + s + "','utilisateur','0')";
+                    Variable.cmd.Connection = Variable.conn;
+                    try
+                    {
+                        nbm = Variable.cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    { }
+
+                    Variable.conn.Close();
+                    MessageBox.Show("Compte créé.");
+                    this.Close();
                 }
-                string s = new string(Variable.motCrypte);
-                Variable.cmd.CommandText = "insert into LogUtilisateur(UsName,Pwd,Grade) values('" + tb_UsernameNewAccount.Text + "','" + s + "','utilisateur')";
-                Variable.cmd.Connection = Variable.conn;
-                try
-                {
-                    nbm = Variable.cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                { }
-
-                Variable.conn.Close();
-                MessageBox.Show("Compte créé.");
-                this.Close();
-            }
         }
 
         private void bt_back_Click(object sender, EventArgs e)

@@ -118,7 +118,7 @@ namespace ProjetBuseyneLaboProg
             }
         }*/
 
-            string sqlstr, enr, enr2, enr3, log;
+            string sqlstr, enr, enr2, enr3, enr5, log;
             string grade;
 
             try
@@ -175,6 +175,8 @@ namespace ProjetBuseyneLaboProg
                                     // MessageBox.Show("auth User");
                                     enr = Variable.dtrd["UsName"].ToString();
                                     enr2 = Variable.dtrd["Pwd"].ToString();
+                                    enr5 = Variable.dtrd["NbreCo"].ToString();
+
                                     // Variable.motCrypte = "";
                                     //Variable.motNonCrypte = "";
                                     
@@ -197,6 +199,24 @@ namespace ProjetBuseyneLaboProg
                                         {
                                             Variable.grade = 2;
                                         }
+
+                                        Variable.conn.Close();
+
+                                        int nbreCo = Convert.ToInt32(enr5);
+                                        nbreCo++;
+
+                                        int nbm;
+
+                                            if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
+
+                                        string s = new string(Variable.motCrypte);
+                                        Variable.cmd.CommandText = "update LogUtilisateur set NbreCo = '" + nbreCo.ToString() + "' where UsName = '" + enr + "'";
+                                        Variable.cmd.Connection = Variable.conn;
+                                        try
+                                        {
+                                            nbm = Variable.cmd.ExecuteNonQuery();
+                                        }
+                                        catch (Exception ex){}
 
                                         //MessageBox.Show(Variable.grade.ToString());
                                         Variable.pseudoConnection = Variable.username;
