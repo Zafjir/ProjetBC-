@@ -3,7 +3,8 @@
   <Profiles />
   <Settings>
     <Setting Name="OledbConnectionString2010" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Adren\Source\Repos\ProjetBC-\GDC.accdb</Value>
+      <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\thoma\OneDrive\Documents\Ecole\LaboProg\ProjetBuseyneC#\GDC.accdb
+</Value>
     </Setting>
   </Settings>
 </SettingsFile>

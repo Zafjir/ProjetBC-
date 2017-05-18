@@ -21,6 +21,12 @@ namespace ProjetBuseyneLaboProg
         public static int compteurEquipe = 0;
         public static string IDPremierTournoi;
         public static int langue = 0;
+
+        public static int grade;
+
+        public static char[] motNonCrypte;
+        public static char[] motCrypte;
+        public static string motStringCrypte;
     }
 
     class langage

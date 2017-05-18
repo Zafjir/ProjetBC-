@@ -53,6 +53,7 @@
     <Compile Include="Archives_Listing.Designer.cs">
       <DependentUpon>Archives_Listing.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cryptage.cs" />
     <Compile Include="DataBaseConnections.cs" />
     <Compile Include="DBAccess.cs" />
     <Compile Include="LogPage.cs">
