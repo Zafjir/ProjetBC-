@@ -25,7 +25,7 @@ namespace ProjetBuseyneLaboProg
                 if (Variable.conn.State == ConnectionState.Open)
                 {
 
-                    sqlstr = "select UsName from LogUtilisateur";
+                    sqlstr = "select UsName from LogUsers";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;
@@ -63,7 +63,7 @@ namespace ProjetBuseyneLaboProg
                 if (Variable.conn.State == ConnectionState.Open)
                 {
 
-                    sqlstr = "select Pwd from LogUtilisateur";
+                    sqlstr = "select Pwd from LogUsers";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;

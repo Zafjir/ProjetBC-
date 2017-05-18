@@ -29,12 +29,12 @@ namespace ProjetBuseyneLaboProg
                 MessageBox.Show("Manque d'informations", "Erreur");
             }
             else{
-                /*
+                
                 int nbm;
 
                 if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
 
-                Variable.cmd.CommandText = "insert into Tournoi(NomTournoi,Type,Calendrier,OrgaResponsable) values('" + tb_nomTournoi.Text + "','" + tb_typeTournoi.Text + "','" + cl_calendrierTournoi.SelectionEnd.Date.ToString() + "','" + label2.Text + "')";
+                Variable.cmd.CommandText = "insert into Tournament(NomTournoi,Type,Calendrier,OrgaResponsable) values('" + tb_nomTournoi.Text + "','" + tb_typeTournoi.Text + "','" + cl_calendrierTournoi.SelectionEnd.Date + "','" + label2.Text + "')";
                 Variable.cmd.Connection = Variable.conn;
                 try
                 {
@@ -42,9 +42,9 @@ namespace ProjetBuseyneLaboProg
                 }
                 catch (Exception ex)
                 { }
-                */
-                DBAccess qry = new DBAccess();
-                qry.qry("insert into Tournoi(NomTournoi,Type,Calendrier,OrgaResponsable) values('" + tb_nomTournoi.Text + "','" + tb_typeTournoi.Text + "','" + cl_calendrierTournoi.SelectionEnd.Date.ToString() + "','" + label2.Text + "')");
+                
+                /*DBAccess qry = new DBAccess();
+                qry.qry("insert into Tournoi(NomTournoi,Type,Calendrier,OrgaResponsable) values('" + tb_nomTournoi.Text + "','" + tb_typeTournoi.Text + "','" + cl_calendrierTournoi.SelectionEnd.Date.ToString() + "','" + label2.Text + "')");*/
                 Variable.conn.Close();
                 MessageBox.Show("Tournoi créé.");
                 tb_nomTournoi.Clear();
@@ -55,6 +55,11 @@ namespace ProjetBuseyneLaboProg
 
         private void PageAccueil_CréerTournoi_Load(object sender, EventArgs e)
         {
+            if (Variable.conn.State == ConnectionState.Open)
+            {
+                Variable.conn.Close();
+            }
+
             if (Variable.langue == 0)
             {
                 label1.Text = langage.CreerTournoiTitreFR;

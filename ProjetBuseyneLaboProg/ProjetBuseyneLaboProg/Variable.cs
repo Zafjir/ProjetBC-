@@ -4,15 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 namespace ProjetBuseyneLaboProg
 {
     class Variable
     {
         public static string username;
         public static string password;
-        public static OleDbConnection conn;
-        public static OleDbCommand cmd;
-        public static OleDbDataReader dtrd;
+        //public static OleDbConnection conn;
+        //public static OleDbCommand cmd;
+        //public static OleDbDataReader dtrd;
+        public static SqlDataAdapter dtad;
+        public static SqlConnection conn;
+        public static SqlCommand cmd;
+        public static SqlDataReader dtrd;
 
         public static string pseudoConnection;
         public static int listing;
@@ -59,8 +64,8 @@ namespace ProjetBuseyneLaboProg
         public static string PageAccueilCréerTournoiEN = "Create tournament";
         public static string PageAccueilVoirTournoiFR = "Voir les tournois";
         public static string PageAccueilVoirTournoiEN = "Show tournaments";
-        public static string PageAccueilTopDesJeuxFR = "Top des jeux";
-        public static string PageAccueilTopDesJeuxEN = "Top games";
+        public static string PageAccueilTopJeuxFR = "Top des jeux";
+        public static string PageAccueilTopJeuxEN = "Top games";
         public static string PageAccueilGestionFR = "Gérer mon tournoi";
         public static string PageAccueilGestionEN = "Manage my tournament";
         public static string PageAccueilCloreFR = "Clore un tournoi";
@@ -110,8 +115,8 @@ namespace ProjetBuseyneLaboProg
         public static string VoirTournoiListeFR = "Liste :";
         public static string VoirTournoiListeEN = "List :";
 
-        public static string TopDesJeuxTitreFR = "Top des jeux";
-        public static string TopDesJeuxTitreEN = "Top games";
+        public static string TopJeuxTitreFR = "Top des jeux";
+        public static string TopJeuxTitreEN = "Top games";
 
         public static string CloreTournoiTitreFR = "Clore un tournoi";
         public static string CloreTournoiTitreEN = "Close tournament";

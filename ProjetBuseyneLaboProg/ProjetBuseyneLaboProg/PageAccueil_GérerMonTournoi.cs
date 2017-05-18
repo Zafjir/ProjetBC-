@@ -19,6 +19,11 @@ namespace ProjetBuseyneLaboProg
 
         private void PageAccueil_GérerMonTournoi_Load(object sender, EventArgs e)
         {
+            if (Variable.conn.State == ConnectionState.Open)
+            {
+                Variable.conn.Close();
+            }
+
             if (Variable.langue == 0)
             {
                 label1.Text = langage.GestionTournoiTitreFR;
@@ -75,7 +80,7 @@ namespace ProjetBuseyneLaboProg
 
             string sqlstr="";
             DBAccess db = new DBAccess();
-            DataTable ds = db.qry("select * from Tournoi");
+            DataTable ds = db.qry("select * from Tournament");
             // db.qry("select * from Tournoi");
             int cpt = 0;
             foreach (DataRow row in ds.Rows)
@@ -130,7 +135,7 @@ namespace ProjetBuseyneLaboProg
             string sqlstr = "";
             listBox2.Items.Clear();
             DBAccess db = new DBAccess();
-            DataTable ds = db.qry("select * from Tournoi where NomTournoi='" + textBox1.Text + "'");
+            DataTable ds = db.qry("select * from Tournament where NomTournoi='" + textBox1.Text + "'");
             int cpt = 0;
            
             foreach (DataRow row in ds.Rows)

@@ -17,8 +17,8 @@ namespace ProjetBuseyneLaboProg
         public LogPage()
         {
             InitializeComponent();
-            Variable.conn = new OleDbConnection();
-            Variable.cmd = new OleDbCommand();
+            Variable.conn = new System.Data.SqlClient.SqlConnection();
+            Variable.cmd = new System.Data.SqlClient.SqlCommand();
 
             Console.Write("Load : " + Variable.conn.ConnectionString.ToString() + "\n");
 
@@ -26,11 +26,17 @@ namespace ProjetBuseyneLaboProg
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (Variable.conn.State == ConnectionState.Open)
+            {
+                Variable.conn.Close();
+            }
+
             textBox1.Clear();
             tb_password.Clear();
             tb_password.PasswordChar = '*';
             tb_password.MaxLength = 14;
-            Variable.conn.ConnectionString = Properties.Settings.Default.OledbConnectionString2010;
+            //Variable.conn.ConnectionString = Properties.Settings.Default.OledbConnectionString2010;
+            Variable.conn.ConnectionString = Properties.Settings.Default.SQLClientConnection;
 
             label3.Parent = pictureBox1;
             label1.Parent = pictureBox1;
@@ -94,7 +100,7 @@ namespace ProjetBuseyneLaboProg
             }
             else
             {
-                ds = db.qry("select * from LogUtilisateur");
+                ds = db.qry("select * from LogUsers");
                 foreach (DataRow row in ds.Rows)
                 {
                     foreach (DataColumn column in ds.Columns)
@@ -164,7 +170,7 @@ namespace ProjetBuseyneLaboProg
                                 // MessageBox.Show("Arrivée dans le if");
                                 Variable.username = textBox1.Text;
                                 Variable.password = tb_password.Text;
-                                sqlstr = "select * from LogUtilisateur";
+                                sqlstr = "select * from LogUsers";
                                 Variable.cmd.CommandType = CommandType.Text;
                                 Variable.cmd.CommandText = sqlstr;
                                 Variable.cmd.Connection = Variable.conn;
@@ -210,7 +216,7 @@ namespace ProjetBuseyneLaboProg
                                             if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
 
                                         string s = new string(Variable.motCrypte);
-                                        Variable.cmd.CommandText = "update LogUtilisateur set NbreCo = '" + nbreCo.ToString() + "' where UsName = '" + enr + "'";
+                                        Variable.cmd.CommandText = "update LogUsers set NbreCo = '" + nbreCo.ToString() + "' where UsName = '" + enr + "'";
                                         Variable.cmd.Connection = Variable.conn;
                                         try
                                         {
@@ -243,7 +249,7 @@ namespace ProjetBuseyneLaboProg
                     }
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) {}
         }
 
         private void cb_languageSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -274,6 +280,11 @@ namespace ProjetBuseyneLaboProg
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (Variable.conn.State == ConnectionState.Open)
+            {
+                Variable.conn.Close();
+            }
+
             if (Variable.langue == 0)
             {
                 label1.Text = langage.LogPageTitreFR;

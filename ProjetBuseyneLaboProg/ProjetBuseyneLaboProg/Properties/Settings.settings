@@ -6,5 +6,8 @@
       <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\thoma\OneDrive\Documents\Ecole\LaboProg\ProjetBuseyneC#\GDC.accdb
 </Value>
     </Setting>
+    <Setting Name="SQLClientConnection" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Server=(local);Initial Catalog=GDC;Integrated Security=true;</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

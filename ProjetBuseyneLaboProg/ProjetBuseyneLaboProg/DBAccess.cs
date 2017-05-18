@@ -16,20 +16,18 @@ namespace ProjetBuseyneLaboProg
     {
         public DataTable qry(String qry)
         {
-            OleDbConnection conn;
-            OleDbCommand cmd;
-            OleDbDataReader dtrd;
-            Variable.cmd = new OleDbCommand();
+            Variable.cmd = new SqlCommand();
             DataTable ds = new DataTable();
             try
             {
-                conn = new OleDbConnection(Properties.Settings.Default.OledbConnectionString2010);
-                conn.Open();
+                Variable.conn.ConnectionString = Properties.Settings.Default.SQLClientConnection;
+                //conn = new OleDbConnection(Properties.Settings.Default.OledbConnectionString2010);
+                Variable.conn.Open();
                 //MessageBox.Show(qry);
                 //MessageBox.Show(Variable.conn.ToString());
-                OleDbDataAdapter oSqlDataAdapter = new OleDbDataAdapter(qry, conn);
+                SqlDataAdapter oSqlDataAdapter = new SqlDataAdapter(qry, Variable.conn);
                 oSqlDataAdapter.Fill(ds);
-                conn.Close();
+                Variable.conn.Close();
             }
             catch (Exception e)
             {

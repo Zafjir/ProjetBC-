@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjetBuseyneLaboProg
 {
-    public partial class PageAccueil_TopDesJeux : Form
+    public partial class PageAccueil_TopJeux : Form
     {
-        public PageAccueil_TopDesJeux()
+        public PageAccueil_TopJeux()
         {
             InitializeComponent();
         }
@@ -22,16 +22,21 @@ namespace ProjetBuseyneLaboProg
             this.Close();
         }
 
-        private void PageAccueil_TopDesJeux_Load(object sender, EventArgs e)
+        private void PageAccueil_TopJeux_Load(object sender, EventArgs e)
         {
+            if (Variable.conn.State == ConnectionState.Open)
+            {
+                Variable.conn.Close();
+            }
+
             if (Variable.langue == 0)
             {
-                label2.Text = langage.TopDesJeuxTitreFR;
+                label2.Text = langage.TopJeuxTitreFR;
                 button1.Text = langage.UniBoutonFermerFR; 
             }
             if (Variable.langue == 1)
             {
-                label2.Text = langage.TopDesJeuxTitreEN;
+                label2.Text = langage.TopJeuxTitreEN;
                 button1.Text = langage.UniBoutonFermerEN;
             }
 
@@ -55,7 +60,7 @@ namespace ProjetBuseyneLaboProg
                 Variable.conn.Open();
                 if (Variable.conn.State == ConnectionState.Open)
                 {
-                    sqlstr = "select * from TopDesJeux where Range='1'";
+                    sqlstr = "select * from TopJeux where Range='1'";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;
@@ -105,7 +110,7 @@ namespace ProjetBuseyneLaboProg
                 Variable.conn.Open();
                 if (Variable.conn.State == ConnectionState.Open)
                 {
-                    sqlstr = "select * from TopDesJeux where Range='1'";
+                    sqlstr = "select * from TopJeux where Range='1'";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;
@@ -147,7 +152,7 @@ namespace ProjetBuseyneLaboProg
                 Variable.conn.Open();
                 if (Variable.conn.State == ConnectionState.Open)
                 {
-                    sqlstr = "select * from TopDesJeux where Range='2'";
+                    sqlstr = "select * from TopJeux where Range='2'";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;
@@ -189,7 +194,7 @@ namespace ProjetBuseyneLaboProg
                 Variable.conn.Open();
                 if (Variable.conn.State == ConnectionState.Open)
                 {
-                    sqlstr = "select * from TopDesJeux where Range='3'";
+                    sqlstr = "select * from TopJeux where Range='3'";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;

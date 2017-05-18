@@ -32,5 +32,17 @@ namespace ProjetBuseyneLaboProg.Properties {
                 return ((string)(this["OledbConnectionString2010"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=(local);Initial Catalog=GDC;Integrated Security=true;")]
+        public string SQLClientConnection {
+            get {
+                return ((string)(this["SQLClientConnection"]));
+            }
+            set {
+                this["SQLClientConnection"] = value;
+            }
+        }
     }
 }

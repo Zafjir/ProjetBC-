@@ -1,6 +1,6 @@
 ﻿namespace ProjetBuseyneLaboProg
 {
-    partial class PageAccueil_TopDesJeux
+    partial class PageAccueil_TopJeux
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageAccueil_TopDesJeux));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageAccueil_TopJeux));
             this.button1 = new System.Windows.Forms.Button();
             this.lb_Top1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -189,7 +189,7 @@
             this.axShockwaveFlash1.Size = new System.Drawing.Size(651, 308);
             this.axShockwaveFlash1.TabIndex = 36;
             // 
-            // PageAccueil_TopDesJeux
+            // PageAccueil_TopJeux
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -203,10 +203,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
-            this.Name = "PageAccueil_TopDesJeux";
+            this.Name = "PageAccueil_TopJeux";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Top des jeux";
-            this.Load += new System.EventHandler(this.PageAccueil_TopDesJeux_Load);
+            this.Load += new System.EventHandler(this.PageAccueil_TopJeux_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

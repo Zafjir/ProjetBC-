@@ -29,7 +29,7 @@ namespace ProjetBuseyneLaboProg
                 MessageBox.Show("Manque d'informations", "Erreur");
             }
             else {
-                /* int nbm;
+                 int nbm;
 
                  if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
 
@@ -43,9 +43,9 @@ namespace ProjetBuseyneLaboProg
                  { }
 
                  Variable.conn.Close();
-                 */
-                DBAccess qry = new DBAccess();
-                qry.qry("insert into Organisation(Nomorganisation,Description,Nomresponsable,Email) values('" + tb_nomOrganisation.Text + "','" + tb_description.Text + "','" + tb_nomResponsable.Text + "','" + tb_email.Text + "')");
+                 
+                /*DBAccess qry = new DBAccess();
+                qry.qry("insert into Organisation(Nomorganisation,Description,Nomresponsable,Email) values('" + tb_nomOrganisation.Text + "','" + tb_description.Text + "','" + tb_nomResponsable.Text + "','" + tb_email.Text + "')");*/
                 MessageBox.Show("Organisation créée.");
                 tb_nomOrganisation.Clear();
                 tb_nomResponsable.Clear();
@@ -57,6 +57,11 @@ namespace ProjetBuseyneLaboProg
 
         private void PageAccueil_CréerOrganisation_Load(object sender, EventArgs e)
         {
+            if (Variable.conn.State == ConnectionState.Open)
+            {
+                Variable.conn.Close();
+            }
+
             if (Variable.langue == 0)
             {
                 label1.Text = langage.CreerOrgaTitreFR;

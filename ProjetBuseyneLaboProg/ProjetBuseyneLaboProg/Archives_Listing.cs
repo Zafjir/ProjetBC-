@@ -46,7 +46,7 @@ namespace ProjetBuseyneLaboProg
                 Variable.conn.Open();
                 if (Variable.conn.State == ConnectionState.Open)
                 {
-                    sqlstr = "select distinct NomTournoi from Résultats";
+                    sqlstr = "select distinct NomTournoi from Resultats";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;
@@ -81,7 +81,7 @@ namespace ProjetBuseyneLaboProg
                 Variable.conn.Open();
                 if (Variable.conn.State == ConnectionState.Open)
                 {
-                    sqlstr = "select * from Résultats where NomTournoi='" + listBox1.SelectedItem.ToString() + "'";
+                    sqlstr = "select * from Resultats where NomTournoi='" + listBox1.SelectedItem.ToString() + "'";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;
@@ -112,7 +112,7 @@ namespace ProjetBuseyneLaboProg
                 Variable.conn.Open();
                 if (Variable.conn.State == ConnectionState.Open)
                 {
-                    sqlstr = "select * from Résultats where NomTournoi='" + listBox1.SelectedItem.ToString() + "' order by Score asc";
+                    sqlstr = "select * from Resultats where NomTournoi='" + listBox1.SelectedItem.ToString() + "' order by Score asc";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;

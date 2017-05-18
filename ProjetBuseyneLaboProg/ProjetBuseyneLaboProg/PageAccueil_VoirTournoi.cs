@@ -19,6 +19,11 @@ namespace ProjetBuseyneLaboProg
 
         private void PageAccueil_VoirTournoi_Load(object sender, EventArgs e)
         {
+            if (Variable.conn.State == ConnectionState.Open)
+            {
+                Variable.conn.Close();
+            }
+
             if (Variable.langue == 0)
             {
                 label1.Text = langage.VoirTournoiTitreFR;
@@ -60,7 +65,7 @@ namespace ProjetBuseyneLaboProg
                 Variable.conn.Open();
                 if (Variable.conn.State == ConnectionState.Open)
                 {
-                    sqlstr = "select * from Tournoi";
+                    sqlstr = "select * from Tournament";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;
@@ -95,7 +100,7 @@ namespace ProjetBuseyneLaboProg
                 Variable.conn.Open();
                 if (Variable.conn.State == ConnectionState.Open)
                 {
-                    sqlstr = "select * from Tournoi";
+                    sqlstr = "select * from Tournament";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;
@@ -143,7 +148,7 @@ namespace ProjetBuseyneLaboProg
                 Variable.conn.Open();
                 if (Variable.conn.State == ConnectionState.Open)
                 {
-                    sqlstr = "select * from Tournoi where NomTournoi ='" + listBox1.SelectedItem.ToString() + "'";
+                    sqlstr = "select * from Tournament where NomTournoi ='" + listBox1.SelectedItem.ToString() + "'";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;
@@ -170,7 +175,7 @@ namespace ProjetBuseyneLaboProg
                     }
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) {MessageBox.Show(ex.ToString()); }
         }
     }
 }

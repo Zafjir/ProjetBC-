@@ -72,7 +72,7 @@ namespace ProjetBuseyneLaboProg
                         if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
                     }
                     string s = new string(Variable.motCrypte);
-                    Variable.cmd.CommandText = "insert into LogUtilisateur(UsName,Pwd,Grade,NbreCo) values('" + tb_UsernameNewAccount.Text + "','" + s + "','utilisateur','0')";
+                    Variable.cmd.CommandText = "insert into LogUsers(UsName,Pwd,Grade,NbreCo) values('" + tb_UsernameNewAccount.Text + "','" + s + "','utilisateur','0')";
                     Variable.cmd.Connection = Variable.conn;
                     try
                     {

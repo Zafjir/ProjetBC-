@@ -20,7 +20,10 @@ namespace ProjetBuseyneLaboProg
 
         private void Form3_Load(object sender, EventArgs e)
         {
-
+            if (Variable.conn.State == ConnectionState.Open)
+            {
+                Variable.conn.Close();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -46,7 +49,7 @@ namespace ProjetBuseyneLaboProg
                 if (Variable.conn.State == ConnectionState.Open)
                 {
 
-                    sqlstr = "select * from LogUtilisateur";
+                    sqlstr = "select * from LogUsers";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;
@@ -193,7 +196,7 @@ namespace ProjetBuseyneLaboProg
 
             if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
 
-            Variable.cmd.CommandText = "update LogUtilisateur set Grade = 'organisateur' where UsName = '" + promote + "'";
+            Variable.cmd.CommandText = "update LogUsers set Grade = 'organisateur' where UsName = '" + promote + "'";
             //MessageBox.Show(Variable.cmd.CommandText);
             Variable.cmd.Connection = Variable.conn;
             try
@@ -224,7 +227,7 @@ namespace ProjetBuseyneLaboProg
                 if (Variable.conn.State == ConnectionState.Open)
                 {
 
-                    sqlstr = "select * from LogUtilisateur";
+                    sqlstr = "select * from LogUsers";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;
@@ -271,7 +274,7 @@ namespace ProjetBuseyneLaboProg
 
             if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
 
-            Variable.cmd.CommandText = "update LogUtilisateur set Grade = 'utilisateur' where UsName = '" + depromote + "'";
+            Variable.cmd.CommandText = "update LogUsers set Grade = 'utilisateur' where UsName = '" + depromote + "'";
             //MessageBox.Show(Variable.cmd.CommandText);
             Variable.cmd.Connection = Variable.conn;
             try
@@ -301,7 +304,7 @@ namespace ProjetBuseyneLaboProg
                 if (Variable.conn.State == ConnectionState.Open)
                 {
 
-                    sqlstr = "select * from LogUtilisateur";
+                    sqlstr = "select * from LogUsers";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;

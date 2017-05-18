@@ -25,8 +25,8 @@ namespace ProjetBuseyneLaboProg
 
         private void button2_Click(object sender, EventArgs e)
         {
-            PageAccueil_TopDesJeux PageAccueil_TopDesJeux = new PageAccueil_TopDesJeux();
-            PageAccueil_TopDesJeux.Show();
+            PageAccueil_TopJeux PageAccueil_TopJeux = new PageAccueil_TopJeux();
+            PageAccueil_TopJeux.Show();
         }
 
         private void retourBt_Click(object sender, EventArgs e)
@@ -102,13 +102,18 @@ namespace ProjetBuseyneLaboProg
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (Variable.conn.State == ConnectionState.Open)
+            {
+                Variable.conn.Close();
+            }
+
             if (Variable.langue == 0)
             {
                 label1.Text = langage.PageAccueilTitreFR;
                 button3.Text = langage.PageAccueilCréerOrgaFR;
                 button4.Text = langage.PageAccueilCréerTournoiFR;
                 button5.Text = langage.PageAccueilVoirTournoiFR;
-                button2.Text = langage.PageAccueilTopDesJeuxFR;
+                button2.Text = langage.PageAccueilTopJeuxFR;
                 button6.Text = langage.PageAccueilGestionFR;
                 button8.Text = langage.PageAccueilCloreFR;
                 button1.Text = langage.UniBoutonFermerFR;
@@ -120,7 +125,7 @@ namespace ProjetBuseyneLaboProg
                 button3.Text = langage.PageAccueilCréerOrgaEN;
                 button4.Text = langage.PageAccueilCréerTournoiEN;
                 button5.Text = langage.PageAccueilVoirTournoiEN;
-                button2.Text = langage.PageAccueilTopDesJeuxEN;
+                button2.Text = langage.PageAccueilTopJeuxEN;
                 button6.Text = langage.PageAccueilGestionEN;
                 button8.Text = langage.PageAccueilCloreEN;
                 button1.Text = langage.UniBoutonFermerEN;

@@ -24,6 +24,11 @@ namespace ProjetBuseyneLaboProg
 
         private void PageAccueil_Archives_Load(object sender, EventArgs e)
         {
+            if (Variable.conn.State == ConnectionState.Open)
+            {
+                Variable.conn.Close();
+            }
+
             if (Variable.langue == 0)
             {
                 label1.Text = langage.CloreTournoiTitreFR;
@@ -67,7 +72,7 @@ namespace ProjetBuseyneLaboProg
                 Variable.conn.Open();
                 if (Variable.conn.State == ConnectionState.Open)
                 {
-                    sqlstr = "select * from Tournoi";
+                    sqlstr = "select * from Tournament";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;
@@ -100,7 +105,7 @@ namespace ProjetBuseyneLaboProg
                 Variable.conn.Open();
                 if (Variable.conn.State == ConnectionState.Open)
                 {
-                    sqlstr = "select * from Tournoi where NomTournoi='" + textBox1.Text + "'";
+                    sqlstr = "select * from Tournament where NomTournoi='" + textBox1.Text + "'";
                     Variable.cmd.CommandType = CommandType.Text;
                     Variable.cmd.CommandText = sqlstr;
                     Variable.cmd.Connection = Variable.conn;
@@ -173,7 +178,7 @@ namespace ProjetBuseyneLaboProg
             int nbm;
             if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
 
-            Variable.cmd.CommandText = "insert into Résultats(Equipe,Score,NumType,NomTournoi) values('" + label9.Text + "','" + textBox2.Text + "','" + Convert.ToInt32(Variable.RangeID2) + "','" + textBox1.Text +"')";
+            Variable.cmd.CommandText = "insert into Resultats(Equipe,Score,NumType,NomTournoi) values('" + label9.Text + "','" + textBox2.Text + "','" + Convert.ToInt32(Variable.RangeID2) + "','" + textBox1.Text +"')";
             Variable.cmd.Connection = Variable.conn;
             try
             {
@@ -195,7 +200,7 @@ namespace ProjetBuseyneLaboProg
             int nbm;
             if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
 
-            Variable.cmd.CommandText = "delete * from Tournoi where N°=" + Convert.ToInt32(Variable.RangeID2);
+            Variable.cmd.CommandText = "delete from Tournament where [N°]=" + Convert.ToInt32(Variable.RangeID2);
             Variable.cmd.Connection = Variable.conn;
             try
             {
@@ -208,7 +213,7 @@ namespace ProjetBuseyneLaboProg
             int nbm2;
             if (Variable.conn.State == ConnectionState.Closed) { Variable.conn.Open(); }
 
-            Variable.cmd.CommandText = "delete * from Participants where Flag =" + Convert.ToInt32(Variable.RangeID2);
+            Variable.cmd.CommandText = "delete from Participants where Flag =" + Convert.ToInt32(Variable.RangeID2);
             Variable.cmd.Connection = Variable.conn;
             try
             {

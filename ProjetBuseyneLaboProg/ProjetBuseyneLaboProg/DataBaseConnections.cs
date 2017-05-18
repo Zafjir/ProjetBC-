@@ -58,7 +58,7 @@ namespace ProjetBuseyneLaboProg
                     {
                         Variable.username = textBox1.Text;
                         Variable.password = tb_password.Text;
-                        sqlstr = "select * from LogUtilisateur";
+                        sqlstr = "select * from LogUsers";
                         Variable.cmd.CommandType = CommandType.Text;
                         Variable.cmd.CommandText = sqlstr;
                         Variable.cmd.Connection = Variable.conn;
