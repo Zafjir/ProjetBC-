@@ -49,10 +49,11 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(22, 637);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(40, 1176);
+            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 44);
+            this.button1.Size = new System.Drawing.Size(169, 81);
             this.button1.TabIndex = 3;
             this.button1.Text = "Fermer";
             this.button1.UseVisualStyleBackColor = true;
@@ -62,11 +63,12 @@
             // 
             this.lb_Top1.AutoSize = true;
             this.lb_Top1.BackColor = System.Drawing.Color.Transparent;
-            this.lb_Top1.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Top1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Top1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lb_Top1.Location = new System.Drawing.Point(6, 33);
+            this.lb_Top1.Location = new System.Drawing.Point(11, 61);
+            this.lb_Top1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lb_Top1.Name = "lb_Top1";
-            this.lb_Top1.Size = new System.Drawing.Size(59, 20);
+            this.lb_Top1.Size = new System.Drawing.Size(93, 32);
             this.lb_Top1.TabIndex = 4;
             this.lb_Top1.Text = "label1";
             this.lb_Top1.Click += new System.EventHandler(this.lb_Top1_Click);
@@ -76,11 +78,12 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(345, 9);
+            this.label2.Location = new System.Drawing.Point(633, 17);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(213, 35);
+            this.label2.Size = new System.Drawing.Size(327, 59);
             this.label2.TabIndex = 26;
             this.label2.Text = "Top des jeux";
             // 
@@ -88,11 +91,12 @@
             // 
             this.lb_Top2.AutoSize = true;
             this.lb_Top2.BackColor = System.Drawing.Color.Transparent;
-            this.lb_Top2.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Top2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Top2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lb_Top2.Location = new System.Drawing.Point(6, 84);
+            this.lb_Top2.Location = new System.Drawing.Point(11, 155);
+            this.lb_Top2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lb_Top2.Name = "lb_Top2";
-            this.lb_Top2.Size = new System.Drawing.Size(59, 20);
+            this.lb_Top2.Size = new System.Drawing.Size(93, 32);
             this.lb_Top2.TabIndex = 27;
             this.lb_Top2.Text = "label3";
             this.lb_Top2.Click += new System.EventHandler(this.lb_Top2_Click);
@@ -101,11 +105,12 @@
             // 
             this.lb_Top3.AutoSize = true;
             this.lb_Top3.BackColor = System.Drawing.Color.Transparent;
-            this.lb_Top3.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Top3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Top3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lb_Top3.Location = new System.Drawing.Point(6, 135);
+            this.lb_Top3.Location = new System.Drawing.Point(11, 249);
+            this.lb_Top3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lb_Top3.Name = "lb_Top3";
-            this.lb_Top3.Size = new System.Drawing.Size(59, 20);
+            this.lb_Top3.Size = new System.Drawing.Size(93, 32);
             this.lb_Top3.TabIndex = 28;
             this.lb_Top3.Text = "label4";
             this.lb_Top3.Click += new System.EventHandler(this.lb_Top3_Click);
@@ -114,11 +119,12 @@
             // 
             this.lb_NomJeu.AutoSize = true;
             this.lb_NomJeu.BackColor = System.Drawing.Color.Transparent;
-            this.lb_NomJeu.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_NomJeu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_NomJeu.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lb_NomJeu.Location = new System.Drawing.Point(256, 80);
+            this.lb_NomJeu.Location = new System.Drawing.Point(469, 148);
+            this.lb_NomJeu.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lb_NomJeu.Name = "lb_NomJeu";
-            this.lb_NomJeu.Size = new System.Drawing.Size(65, 20);
+            this.lb_NomJeu.Size = new System.Drawing.Size(99, 32);
             this.lb_NomJeu.TabIndex = 29;
             this.lb_NomJeu.Text = "label5";
             // 
@@ -126,22 +132,24 @@
             // 
             this.lb_Description.AutoSize = true;
             this.lb_Description.BackColor = System.Drawing.Color.Transparent;
-            this.lb_Description.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Description.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lb_Description.Location = new System.Drawing.Point(256, 165);
+            this.lb_Description.Location = new System.Drawing.Point(469, 305);
+            this.lb_Description.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lb_Description.Name = "lb_Description";
-            this.lb_Description.Size = new System.Drawing.Size(52, 19);
+            this.lb_Description.Size = new System.Drawing.Size(86, 31);
             this.lb_Description.TabIndex = 31;
             this.lb_Description.Text = "label1";
             // 
             // lb_RésuméJeu
             // 
             this.lb_RésuméJeu.BackColor = System.Drawing.Color.Transparent;
-            this.lb_RésuméJeu.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_RésuméJeu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_RésuméJeu.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lb_RésuméJeu.Location = new System.Drawing.Point(260, 252);
+            this.lb_RésuméJeu.Location = new System.Drawing.Point(477, 465);
+            this.lb_RésuméJeu.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lb_RésuméJeu.Name = "lb_RésuméJeu";
-            this.lb_RésuméJeu.Size = new System.Drawing.Size(651, 123);
+            this.lb_RésuméJeu.Size = new System.Drawing.Size(1194, 227);
             this.lb_RésuméJeu.TabIndex = 34;
             this.lb_RésuméJeu.Text = "label1";
             // 
@@ -151,11 +159,13 @@
             this.groupBox1.Controls.Add(this.lb_Top1);
             this.groupBox1.Controls.Add(this.lb_Top2);
             this.groupBox1.Controls.Add(this.lb_Top3);
-            this.groupBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox1.Location = new System.Drawing.Point(12, 80);
+            this.groupBox1.Location = new System.Drawing.Point(22, 148);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(224, 192);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Size = new System.Drawing.Size(411, 354);
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sélection";
@@ -164,9 +174,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProjetBuseyneLaboProg.Properties.Resources.maxresdefault;
-            this.pictureBox1.Location = new System.Drawing.Point(590, 55);
+            this.pictureBox1.Location = new System.Drawing.Point(1082, 102);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(321, 179);
+            this.pictureBox1.Size = new System.Drawing.Size(589, 330);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
@@ -175,8 +186,9 @@
             // 
             this.pictureBox2.Image = global::ProjetBuseyneLaboProg.Properties.Resources.sgdfsdfg;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(924, 695);
+            this.pictureBox2.Size = new System.Drawing.Size(1694, 1283);
             this.pictureBox2.TabIndex = 33;
             this.pictureBox2.TabStop = false;
             // 
@@ -184,16 +196,17 @@
             // 
             this.axShockwaveFlash1.Enabled = true;
             this.axShockwaveFlash1.Location = new System.Drawing.Point(260, 378);
+            this.axShockwaveFlash1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.axShockwaveFlash1.Name = "axShockwaveFlash1";
             this.axShockwaveFlash1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axShockwaveFlash1.OcxState")));
-            this.axShockwaveFlash1.Size = new System.Drawing.Size(537, 281);
+            this.axShockwaveFlash1.Size = new System.Drawing.Size(1139, 539);
             this.axShockwaveFlash1.TabIndex = 36;
             // 
             // PageAccueil_TopDesJeux
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 693);
+            this.ClientSize = new System.Drawing.Size(1692, 1279);
             this.Controls.Add(this.axShockwaveFlash1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lb_RésuméJeu);
@@ -203,6 +216,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "PageAccueil_TopDesJeux";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Top des jeux";
