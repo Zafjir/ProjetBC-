@@ -35,6 +35,8 @@ namespace ProjetBuseyneLaboProg
         {
             listBox1.Items.Clear();
             listBox2.Items.Clear();
+            listBox3.Items.Clear();
+            listBox4.Items.Clear();
             label1.Text = "User name";
             label2.Text = "Password";
             label3.Text = "Grade";
@@ -131,7 +133,51 @@ namespace ProjetBuseyneLaboProg
 
         private void button1_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
+            listBox3.Items.Clear();
+            listBox4.Items.Clear();
+            label1.Text = "Tournament name";
+            label2.Text = "Type";
+            label3.Text = "Calendar";
+            label4.Text = "Organisation";
 
+            string sqlstr;
+            string enr1, enr2, enr3, enr4;
+            try
+            {
+                Variable.conn.Open();
+                if (Variable.conn.State == ConnectionState.Open)
+                {
+                    sqlstr = "select * from Tournament";
+                    Variable.cmd.CommandType = CommandType.Text;
+                    Variable.cmd.CommandText = sqlstr;
+                    Variable.cmd.Connection = Variable.conn;
+                    Variable.dtrd = Variable.cmd.ExecuteReader();
+                    while (Variable.dtrd.Read())
+                    {
+                        enr1 = Variable.dtrd["NomTournoi"].ToString();
+                        enr2 = Variable.dtrd["Type"].ToString();
+                        enr3 = Variable.dtrd["Calendrier"].ToString();
+                        enr4 = Variable.dtrd["OrgaResponsable"].ToString();
+                        listBox1.Items.Add(enr1);
+                        listBox2.Items.Add(enr2);
+                        listBox3.Items.Add(enr3);
+                        listBox4.Items.Add(enr4);
+
+                        if (Variable.dtrd == null)
+                        {
+                            Variable.dtrd.Close();
+                        }
+
+                        if (Variable.conn.State == ConnectionState.Open)
+                        {
+                            Variable.conn.Close();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { }
         }
 
         private void button2_Click(object sender, EventArgs e)
